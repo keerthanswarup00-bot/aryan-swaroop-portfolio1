@@ -62,8 +62,12 @@
   /* ── HEADER SCROLL ── */
   var header=document.getElementById('siteHeader');
   if(header){
+    var lastY=window.scrollY;
     window.addEventListener('scroll',function(){
       header.classList.toggle('scrolled',window.scrollY>10);
+      if(window.scrollY>lastY&&window.scrollY>120){header.style.transform='translateY(-100%)';}
+      else{header.style.transform='translateY(0)';}
+      lastY=window.scrollY;
     },{passive:true});
   }
 
@@ -99,6 +103,37 @@
       });
     },{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
     els.forEach(function(el){io.observe(el);});
+  });
+
+  /* ── SECTION HEADING PRESENCE ── */
+  document.addEventListener('DOMContentLoaded',function(){
+    var groups=document.querySelectorAll('.section-heading');
+    if(!groups.length)return;
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        entry.target.classList.toggle('in-view',entry.isIntersecting);
+      });
+    },{threshold:0.25,rootMargin:'0px 0px -10% 0px'});
+    groups.forEach(function(group){io.observe(group);});
+  });
+
+  /* ── PARALLAX ── */
+  document.addEventListener('DOMContentLoaded',function(){
+    var items=[].slice.call(document.querySelectorAll('[data-parallax]'));
+    if(!items.length||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    function updateParallax(){
+      var vh=window.innerHeight||1;
+      items.forEach(function(item){
+        var speed=parseFloat(item.getAttribute('data-parallax-speed')||'0.08');
+        var rect=item.getBoundingClientRect();
+        var center=rect.top+rect.height/2;
+        var progress=(center-vh/2)/vh;
+        item.style.setProperty('--parallax-offset',(-progress*speed*180).toFixed(2)+'px');
+      });
+    }
+    updateParallax();
+    window.addEventListener('scroll',updateParallax,{passive:true});
+    window.addEventListener('resize',updateParallax);
   });
 
   /* ── COUNTER ANIMATION ── */

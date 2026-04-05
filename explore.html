@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore — mini projects, live experiments, and useful freebies by Aryan Swaroop for real estate, branding, and growing businesses.">
+<meta property="og:title" content="Explore — Aryan Swaroop">
+<meta property="og:description" content="Mini projects, experiments, and practical freebies.">
+<title>Explore — Aryan Swaroop</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+.explore-hero{
+  padding:140px var(--pad) 72px;
+  border-bottom:1px solid var(--br);
+}
+.explore-hero-inner{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:56px;
+  align-items:end;
+}
+.explore-title{
+  font-size:clamp(3rem,7vw,5.5rem);
+  line-height:1.01;
+  letter-spacing:-.045em;
+  margin-bottom:18px;
+}
+.explore-sub{max-width:560px;}
+.explore-meta{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.explore-meta-card{
+  background:var(--bg-el);
+  background-image:var(--surface-tint);
+  border:1px solid var(--br);
+  border-radius:16px;
+  padding:18px;
+}
+.explore-meta-label{
+  font-family:var(--mono);
+  font-size:.62rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--tx3);
+  margin-bottom:6px;
+}
+.explore-meta-value{
+  font-size:1rem;
+  font-weight:600;
+  color:var(--tx);
+}
+.explore-section{padding:96px 0;}
+.explore-section.alt{background:var(--bg-sub);}
+.explore-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.explore-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:320px;
+  padding:28px;
+  background:var(--bg-el);
+  background-image:var(--surface-tint);
+  border:1px solid var(--br);
+  border-radius:20px;
+  box-shadow:var(--sh-sm);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .25s ease;
+}
+.explore-card:hover{
+  transform:translateY(-8px) scale(1.01);
+  box-shadow:var(--sh-hov);
+  border-color:var(--br2);
+}
+.explore-card-top{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.explore-card-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  width:max-content;
+  font-family:var(--mono);
+  font-size:.62rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--tx3);
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--bg-sub);
+}
+.explore-card-title{
+  font-size:1.35rem;
+  line-height:1.15;
+  letter-spacing:-.03em;
+  color:var(--tx);
+}
+.explore-card-desc{
+  font-size:.9rem;
+  color:var(--tx2);
+  line-height:1.75;
+}
+.explore-card-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.explore-card-tags span{
+  font-family:var(--mono);
+  font-size:.62rem;
+  color:var(--tx3);
+  background:var(--bg-sub);
+  padding:5px 9px;
+  border-radius:999px;
+}
+.explore-card-actions{
+  margin-top:28px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.explore-card-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--mono);
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--tx);
+}
+.explore-note{
+  margin-top:24px;
+  font-size:.85rem;
+  color:var(--tx3);
+  max-width:680px;
+}
+@media (max-width:1024px){
+  .explore-hero-inner{grid-template-columns:1fr;gap:32px;}
+}
+@media (max-width:768px){
+  .explore-hero{padding:110px var(--pad) 48px;}
+  .explore-grid{grid-template-columns:1fr;}
+  .explore-meta{grid-template-columns:1fr;}
+  .explore-card{min-height:auto;padding:24px;}
+}
+</style>
+</head>
+<body style="opacity:0;">
+
+<div class="mob-overlay" id="mobOverlay">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  <nav class="mob-nav">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="real-estate.html" onclick="closeMob()">Real Estate</a>
+    <a href="case-studies.html" onclick="closeMob()">Case Studies</a>
+    <a href="work.html" onclick="closeMob()">The Work</a>
+    <a href="explore.html" onclick="closeMob()">Explore</a>
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20Explore%20page%20and%20I%27d%20like%20to%20talk." target="_blank" rel="noopener" class="mob-cta" onclick="closeMob()">Let's Talk ↗</a>
+  </nav>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <a href="index.html" class="logo">Aryan <span>Swaroop</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+    <a href="explore.html">Explore</a>
+  </nav>
+  <div class="header-right">
+    <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false"></button>
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20Explore%20page%20and%20I%27d%20like%20to%20talk." target="_blank" rel="noopener" class="cta-btn">Let's Talk</a>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="explore-hero">
+  <div class="container">
+    <div class="explore-hero-inner">
+      <div class="section-heading in-view">
+        <span class="sec-label reveal">Explore</span>
+        <h1 class="explore-title headline-glow reveal rd1" data-parallax data-parallax-speed="0.12">Small builds,<br><span class="grad-text">useful tools,</span><br>practical freebies.</h1>
+        <p class="lead explore-sub reveal rd2">A lighter side of the portfolio: mini products, experiments, and free resources for real estate, brands, and founders who want practical clarity before they spend money.</p>
+      </div>
+      <div class="explore-meta reveal rd2">
+        <div class="explore-meta-card">
+          <div class="explore-meta-label">Mini Projects</div>
+          <div class="explore-meta-value">2 live builds and counting</div>
+        </div>
+        <div class="explore-meta-card">
+          <div class="explore-meta-label">Freebies</div>
+          <div class="explore-meta-value">Templates people can actually use</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="explore-section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="sec-label">Mini Projects</span>
+      <h2 class="headline-accent" style="margin-top:6px;margin-bottom:14px;">Things I’ve <span class="grad-text">built.</span></h2>
+      <p class="lead" style="max-width:560px;">Live experiments, product ideas, and interfaces that show how I think when I’m building for utility, speed, and interaction.</p>
+    </div>
+    <div class="explore-grid" style="margin-top:40px;">
+      <article class="explore-card reveal" data-parallax data-parallax-speed="0.05">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Live Demo</span>
+          <div class="explore-card-title">Aryan Swaroop Portfolio</div>
+          <p class="explore-card-desc">A live version of the portfolio direction itself. Useful for comparing iterations, testing motion decisions, and evolving the site as a product rather than a static brochure.</p>
+          <div class="explore-card-tags">
+            <span>Portfolio</span>
+            <span>UI System</span>
+            <span>Frontend</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-primary" href="https://aryanswaroopportfolio.vercel.app/" target="_blank" rel="noopener">Open live site ↗</a>
+        </div>
+      </article>
+
+      <article class="explore-card reveal rd1" data-parallax data-parallax-speed="0.08">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Tool</span>
+          <div class="explore-card-title">Expense Tracker</div>
+          <p class="explore-card-desc">A simple live tool built around clarity and fast interaction. The kind of small product build that shows practical UI decisions, layout thinking, and how I approach useful digital products.</p>
+          <div class="explore-card-tags">
+            <span>Web App</span>
+            <span>Dashboard</span>
+            <span>Utility</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-primary" href="https://expens-tracker-indol.vercel.app" target="_blank" rel="noopener">Open live tool ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="explore-section alt">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="sec-label">Freebies</span>
+      <h2 class="headline-accent" style="margin-top:6px;margin-bottom:14px;">Things you can <span class="grad-text">use.</span></h2>
+      <p class="lead" style="max-width:620px;">Free templates, checklists, and planning tools designed to be genuinely useful for developers, founders, and businesses before they hire anyone.</p>
+    </div>
+    <div class="explore-grid" style="margin-top:40px;">
+      <article class="explore-card reveal">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Real Estate</span>
+          <div class="explore-card-title">Project Brochure Checklist</div>
+          <p class="explore-card-desc">A practical checklist for making sure your brochure answers the questions buyers actually care about before they lose trust.</p>
+          <div class="explore-card-tags">
+            <span>PDF</span>
+            <span>Buyer Trust</span>
+            <span>Launch Ready</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Project%20Brochure%20Checklist%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+        </div>
+      </article>
+
+      <article class="explore-card reveal rd1">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Real Estate</span>
+          <div class="explore-card-title">Real Estate Ad Creative Audit Sheet</div>
+          <p class="explore-card-desc">A quick scoring sheet for checking whether your ad creative communicates clarity, credibility, and enough detail to deserve an enquiry.</p>
+          <div class="explore-card-tags">
+            <span>Checklist</span>
+            <span>Ads</span>
+            <span>Meta</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Real%20Estate%20Ad%20Creative%20Audit%20Sheet%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+        </div>
+      </article>
+
+      <article class="explore-card reveal">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Branding</span>
+          <div class="explore-card-title">Founder Brand Brief</div>
+          <p class="explore-card-desc">A concise worksheet for founders who know they need branding but don’t yet know how to explain the business clearly.</p>
+          <div class="explore-card-tags">
+            <span>Worksheet</span>
+            <span>Strategy</span>
+            <span>Founders</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Founder%20Brand%20Brief%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+        </div>
+      </article>
+
+      <article class="explore-card reveal rd1">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Branding</span>
+          <div class="explore-card-title">Packaging Design Brief</div>
+          <p class="explore-card-desc">A simple template for product founders who want packaging that reflects the right buyer, shelf context, and brand story from the start.</p>
+          <div class="explore-card-tags">
+            <span>Template</span>
+            <span>Packaging</span>
+            <span>F&amp;B</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Packaging%20Design%20Brief%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+        </div>
+      </article>
+
+      <article class="explore-card reveal">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Marketing</span>
+          <div class="explore-card-title">WhatsApp Lead Follow-Up Flow</div>
+          <p class="explore-card-desc">A ready-to-adapt sequence for following up with leads without sounding robotic, desperate, or vague.</p>
+          <div class="explore-card-tags">
+            <span>Copy</span>
+            <span>Lead Nurture</span>
+            <span>Sales</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20WhatsApp%20Lead%20Follow-Up%20Flow%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+        </div>
+      </article>
+
+      <article class="explore-card reveal rd1">
+        <div class="explore-card-top">
+          <span class="explore-card-kicker">Content</span>
+          <div class="explore-card-title">30-Day Content Planner</div>
+          <p class="explore-card-desc">A practical planner for small brands that need a month of content direction without overcomplicating strategy.</p>
+          <div class="explore-card-tags">
+            <span>Planner</span>
+            <span>Social Media</span>
+            <span>Small Business</span>
+          </div>
+        </div>
+        <div class="explore-card-actions">
+          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%2030-Day%20Content%20Planner%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+        </div>
+      </article>
+    </div>
+    <p class="explore-note reveal">These can later become real downloadable PDFs or Notion templates. For now, the section gives people a useful reason to discover your work and start a conversation.</p>
+  </div>
+</section>
+
+<div class="cta-band reveal">
+  <h2 class="headline-glow">Want more things like<br><span class="grad-text">this built for your brand?</span></h2>
+  <p class="lead">Tell me what you’re building and I’ll point you to the right direction, freebie, or service.</p>
+  <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20went%20through%20your%20Explore%20page%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn-wa">
+    <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+    Let’s talk
+  </a>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-logo">Aryan <span>Swaroop</span></div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+    <a href="explore.html">Explore</a>
+    <a href="https://www.instagram.com/arya.nswaroop/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/aryanswaroop/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/Aryan-swaroop" target="_blank" rel="noopener">Behance</a>
+  </nav>
+  <p class="footer-copy">© 2026 Aryan Swaroop · Bengaluru, India</p>
+</footer>
+
+<a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20Explore%20page%20and%20I%27d%20like%20to%20talk." target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+  <span class="wa-fab-label">Let's Talk</span>
+</a>
+
+<script src="shared.js"></script>
+</body>
+</html>
