@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aryan Swaroop — Real estate branding specialist in Bengaluru. Brand identity, 3D visualization, Meta ads, and lead systems for property developers across Hoskote, Devanahalli, and Sarjapur.">
+<meta property="og:title" content="Aryan Swaroop — Real Estate Branding, Bengaluru">
+<meta property="og:description" content="A plot of land is nothing until someone can picture their life on it.">
+<meta property="og:image" content="images/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<title>Aryan Swaroop — Real Estate Branding</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HOMEPAGE SPECIFIC ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px var(--pad) 80px;
+  position: relative;
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.hero-eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: var(--tx4);
+}
+.hero-title {
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.04em;
+  color: var(--tx);
+  max-width: 860px;
+  margin: 0 auto 28px;
+}
+/* Colourful gradient — amber → coral → rose → amber */
+.hero-grad-colour {
+  background: linear-gradient(120deg, #F59E0B 0%, #EF4444 35%, #EC4899 65%, #F59E0B 100%);
+  background-size: 250% 250%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: heroGrad 5s ease infinite;
+}
+@keyframes heroGrad {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-sub {
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  color: var(--tx3);
+  line-height: 1.75;
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.hero-locations {
+  margin-top: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.hero-loc-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx4);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.hero-loc-tag {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  background: var(--bg-sub);
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: .03em;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .08em;
+  color: var(--tx4);
+  text-transform: uppercase;
+}
+.hero-scroll-line {
+  width: 40px;
+  height: 1px;
+  background: var(--tx4);
+}
+
+/* ── PROBLEM SECTION ── */
+.problem-section { padding: 96px 0; background: var(--bg); }
+.problem-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--tx3);
+  margin-bottom: 20px;
+}
+.problem-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: stretch;
+}
+.problem-img-wrap {
+  background: var(--bg-el);
+  border: 1px solid var(--br);
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.problem-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.problem-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background: var(--bg-sub);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+}
+.problem-content {
+  background: var(--bg-el);
+  border: 1px solid var(--br);
+  border-radius: 16px;
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ── FEATURED WORK ── */
+.featured-work { padding: 96px 0; }
+.featured-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.featured-header a {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--tx3);
+  transition: color .15s;
+}
+.featured-header a:hover { color: var(--tx); }
+
+/* ── INSIGHTS ── */
+.insights-section { padding: 96px 0; background: var(--bg-sub); }
+
+/* ── PROCESS ── */
+.process-section { padding: 96px 0; }
+.process-header { max-width: 600px; margin-bottom: 48px; }
+.process-note {
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--tx3);
+  letter-spacing: .04em;
+}
+
+/* ── TESTIMONIAL ── */
+.testimonial-section { padding: 96px 0; }
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.testimonial-left { padding-right: 24px; }
+
+/* ── PRICING ── */
+.pricing-section { padding: 96px 0; background: var(--bg-sub); }
+.pricing-header { margin-bottom: 48px; }
+.pricing-note {
+  margin-top: 20px;
+  font-size: .85rem;
+  color: var(--tx3);
+  max-width: 560px;
+}
+
+/* ── FAQ ── */
+.faq-section { padding: 96px 0; }
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  align-items: start;
+}
+.faq-left { position: sticky; top: 80px; }
+
+/* ── PLACEHOLDER STYLES ── */
+.img-placeholder {
+  background: var(--bg-sub);
+  border: 1px dashed var(--br2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+}
+.img-placeholder .ph-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx4);
+  letter-spacing: .06em;
+  text-align: center;
+  line-height: 1.5;
+}
+.img-placeholder .ph-size {
+  font-family: var(--mono);
+  font-size: .58rem;
+  color: var(--tx4);
+  opacity: .7;
+}
+
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(2.4rem, 8vw, 4rem); }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; gap: 32px; }
+  .faq-left { position: static; }
+  .hero-scroll { display: none; }
+  .featured-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+</style>
+</head>
+<body style="opacity:0;">
+
+<!-- MOBILE OVERLAY -->
+<div class="mob-overlay" id="mobOverlay">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  <nav class="mob-nav">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="real-estate.html" onclick="closeMob()">Real Estate</a>
+    <a href="case-studies.html" onclick="closeMob()">Case Studies</a>
+    <a href="work.html" onclick="closeMob()">The Work</a>
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="mob-cta" onclick="closeMob()">Let's Talk ↗</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="index.html" class="logo">Aryan <span>Swaroop</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+  </nav>
+  <div class="header-right">
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="cta-btn">Let's Talk</a>
+    <button class="burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     S1 — HERO
+══════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="container">
+
+    <div class="hero-eyebrow reveal">
+      <span class="hero-eyebrow-line"></span>
+      <span class="sec-label" style="margin:0;">Real Estate Branding · Bengaluru's Growth Corridors</span>
+    </div>
+
+    <h1 class="hero-title reveal rd1">
+      A plot of land is nothing until someone can
+      <span class="grad-text">picture their life on it.</span>
+    </h1>
+
+    <p class="hero-sub reveal rd2">
+      That's why every creative I make puts real people in the frame —
+      not empty villas, not bare clubhouses, not blank plots.
+      When people see themselves in your project, they stop comparing prices
+      and start imagining moving in.
+    </p>
+
+    <div class="hero-actions reveal rd3">
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20tell%20you%20about%20my%20project." target="_blank" rel="noopener" class="btn-wa">
+        <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+        Tell me about your project
+      </a>
+      <a href="case-studies.html" class="btn-secondary">See the work →</a>
+    </div>
+
+    <div class="hero-locations reveal rd4">
+      <span class="hero-loc-label">Active in</span>
+      <span class="hero-loc-tag">Hoskote</span>
+      <span class="hero-loc-tag">Devanahalli</span>
+      <span class="hero-loc-tag">Sarjapur</span>
+      <span class="hero-loc-tag">East Bengaluru</span>
+      <span class="hero-loc-tag">Growth Corridors</span>
+    </div>
+
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-line"></span>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S2 — TICKER
+══════════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     S3 — STAT STRIP
+══════════════════════════════════════ -->
+<section class="section-sm">
+  <div class="container">
+    <div class="stats-strip">
+      <div class="stat-card reveal">
+        <div class="stat-num" data-target="302" data-suffix="">0</div>
+        <div class="stat-label">Lead form submissions<br>— verified from Meta Ads Manager</div>
+      </div>
+      <div class="stat-card reveal rd1">
+        <div class="stat-num" data-prefix="₹" data-target="82" data-suffix="">0</div>
+        <div class="stat-label">Lowest cost per lead<br>— best performing campaign</div>
+      </div>
+      <div class="stat-card reveal rd2">
+        <div class="stat-num" data-target="4.3" data-suffix="%">0</div>
+        <div class="stat-label">Lead-to-site-visit rate<br>— tracked in client CRM</div>
+      </div>
+      <div class="stat-card reveal rd3">
+        <div class="stat-num" data-target="6" data-suffix="">0</div>
+        <div class="stat-label">Real estate projects<br>— across growth corridors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S4 — PROBLEM
+══════════════════════════════════════ -->
+<section class="problem-section">
+  <div class="container">
+    <div class="problem-split">
+
+      <!-- IMAGE: before/after comparison -->
+      <div class="problem-img-wrap reveal">
+        <!-- Replace src with: images/problem-comparison.jpg -->
+        <!-- Size: 800x600px landscape — generic branding left, your work right -->
+        <div class="img-placeholder problem-placeholder" style="aspect-ratio:4/3;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span class="ph-label">images/problem-comparison.jpg<br>Before/after — generic branding vs your work</span>
+          <span class="ph-size">800 × 600px</span>
+        </div>
+      </div>
+
+      <div class="problem-content reveal rd1">
+        <span class="sec-label">The Problem</span>
+        <h2 class="h3" style="font-size:clamp(1.4rem,2.5vw,2rem);margin-bottom:20px;">
+          Most real estate branding fails before the buyer sees the first ad.
+        </h2>
+        <p style="margin-bottom:16px;">
+          Not because it's badly made. Because it's made for no one in particular.
+        </p>
+        <p style="margin-bottom:16px;">
+          A logo that could be any developer. A brochure that lists specs
+          but doesn't tell a story. Creatives that show the building
+          but not the life inside it. Everything technically correct,
+          nothing emotionally true.
+        </p>
+        <p style="margin-bottom:24px;">
+          Buyers in Hoskote, Devanahalli, and the growth corridors aren't
+          buying square feet. They're buying a decision they'll explain
+          to their family at the dinner table. The brand that makes that
+          decision feel obvious — wins the enquiry. The brand that looks
+          like every other developer — loses it quietly, without ever knowing why.
+        </p>
+        <p style="font-size:.88rem;color:var(--tx3);font-style:italic;">
+          This is the problem I work on. Not just making things look good.
+          Making the right buyer stop, feel something, and reach out.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S5 — FEATURED WORK
+══════════════════════════════════════ -->
+<section class="featured-work">
+  <div class="container">
+
+    <div class="featured-header reveal">
+      <div>
+        <span class="sec-label">Featured Work</span>
+        <h2 style="margin-top:6px;">The work that <em style="font-style:italic;color:var(--tx3);">proves it.</em></h2>
+      </div>
+      <a href="case-studies.html">All case studies →</a>
+    </div>
+
+    <div class="work-grid">
+
+      <!-- CARD 1: PAAVANI -->
+      <a href="case-studies.html#cs-paavani" class="work-card reveal">
+        <div class="work-card-img" style="background-image:url('images/paavani-hero.jpg');aspect-ratio:16/10;">
+          <div class="card-img-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:20px;"><span style="font-family:var(--mono);font-size:.68rem;color:#fff;letter-spacing:.08em;text-transform:uppercase;">View case study →</span></div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-meta">
+            <span class="pill pill-re">Real Estate</span>
+            <span class="pill pill-sec">Hoskote</span>
+          </div>
+          <div class="wc-name">Paavani Properties</div>
+          <div class="wc-desc">Zero brand presence to complete system. 302 leads in 66 days at ₹82 per lead. 4.3% lead-to-site-visit rate — tracked by sales team.</div>
+          <div class="wc-tags">
+            <span class="wc-tag">Brand Identity</span>
+            <span class="wc-tag">Print</span>
+            <span class="wc-tag">3D Renders</span>
+            <span class="wc-tag">Meta Ads</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- CARD 2: ROYAL FARM -->
+      <a href="case-studies.html#cs-royalfarm" class="work-card reveal rd1">
+        <div class="work-card-img" style="background-image:url('images/royalfarm-hero.jpg');aspect-ratio:16/10;">
+          <div class="card-img-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:20px;"><span style="font-family:var(--mono);font-size:.68rem;color:#fff;letter-spacing:.08em;text-transform:uppercase;">View case study →</span></div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-meta">
+            <span class="pill pill-farm">Real Estate</span>
+            <span class="pill pill-sec">Farmland</span>
+          </div>
+          <div class="wc-name">Royal Farm</div>
+          <div class="wc-desc">Displaced a large agency. Built a mascot-led brand for working professionals who want to grow food and live closer to nature. Client confirmed sales.</div>
+          <div class="wc-tags">
+            <span class="wc-tag">Mascot</span>
+            <span class="wc-tag">Brochure</span>
+            <span class="wc-tag">Hoardings</span>
+            <span class="wc-tag">Meta Ads</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S6 — INSIGHTS
+══════════════════════════════════════ -->
+<section class="insights-section">
+  <div class="container">
+
+    <span class="sec-label reveal">What the work has taught me</span>
+    <h2 class="reveal rd1" style="margin-bottom:8px;">Three things most agencies<br>will never tell you.</h2>
+    <p class="lead reveal rd2" style="margin-bottom:40px;max-width:520px;">From running real campaigns in Bengaluru's growth corridors — not from a textbook.</p>
+
+    <div class="insight-grid">
+
+      <!-- INSIGHT 1 -->
+      <div class="insight-card reveal">
+        <!-- Replace with: images/insight-paavani-ad.jpg — the ₹82 static ad creative, 600x600px -->
+        <div class="insight-img-placeholder">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">images/insight-paavani-ad.jpg<br>600 × 600px square</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-source"><span class="pill pill-re">Paavani Properties</span></div>
+          <div class="insight-title">In Tier 2 markets, clarity sells more than creativity.</div>
+          <div class="insight-text">The best performing ad wasn't a 3D render or a lifestyle video. It was a static image — plot layout, dimensions, price. Visible. Specific. Immediate. 302 leads in 66 days at ₹82 each.</div>
+        </div>
+      </div>
+
+      <!-- INSIGHT 2 -->
+      <div class="insight-card reveal rd1">
+        <!-- Replace with: images/insight-royalfarm-mascot.jpg — mascot illustration, 600x600px -->
+        <div class="insight-img-placeholder">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">images/insight-royalfarm-mascot.jpg<br>600 × 600px square</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-source"><span class="pill pill-farm">Royal Farm</span></div>
+          <div class="insight-title">The buyer your client thinks they're targeting rarely buys.</div>
+          <div class="insight-text">Royal Farm assumed their buyer was a land investor. The real buyer was an office-goer — tired of the city, wanting something to grow on weekends. A large agency had already built the wrong brand. Understanding the real buyer changed everything.</div>
+        </div>
+      </div>
+
+      <!-- INSIGHT 3 -->
+      <div class="insight-card reveal rd2">
+        <!-- Replace with: images/insight-brahmi-packaging.jpg — Brahmi packaging flat lay, 600x600px -->
+        <div class="insight-img-placeholder">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="ph-label">images/insight-brahmi-packaging.jpg<br>600 × 600px square</span>
+        </div>
+        <div class="insight-body">
+          <div class="insight-source"><span class="pill pill-food">Brahmi Coffee</span></div>
+          <div class="insight-title">Before you build the brand, decide what you're actually selling.</div>
+          <div class="insight-text">The founder came with one brand, three sub-brands, a wellness concept, a chakra product line — none of it connected. The first thing I did wasn't design. It was subtract. One product. One buyer. One message. Then design. In that order, never reversed.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S7 — PROCESS
+══════════════════════════════════════ -->
+<section class="process-section">
+  <div class="container">
+
+    <div class="process-header reveal">
+      <span class="sec-label">How it works</span>
+      <h2 style="margin-top:6px;margin-bottom:16px;">How a project<br>actually works.</h2>
+      <p class="lead">Before anything gets designed, we have a conversation most agencies skip entirely.</p>
+    </div>
+
+    <div class="process-grid">
+
+      <div class="process-step reveal">
+        <div class="step-number">01</div>
+        <div class="step-title">The honest call</div>
+        <div class="step-body">A WhatsApp message, then a video call. I want to understand your project — but more than that, where things are breaking. Is it the brand? The system? The ads? Sometimes it's all three. Sometimes it's none and the real problem is somewhere else entirely.<br><br>If I think you don't need what you're about to pay for, I'll tell you. That conversation has saved clients more money than any campaign I've ever run.</div>
+        <div class="step-checkpoint">→ Checkpoint: Written positioning sign-off before design starts</div>
+      </div>
+
+      <div class="process-step reveal rd1">
+        <div class="step-number">02</div>
+        <div class="step-title">The diagnosis</div>
+        <div class="step-body">If we're moving forward — contract, scope, and you hand over everything you currently have. Old logo, old brochures, ad account access, whatever exists. I need to see what's already there before deciding what to build.<br><br>Then I put together a wireframe. Not a design — a document. Here's the exact problem. Here's how I'm going to solve it. Here's why that solution makes you money.</div>
+        <div class="step-checkpoint">→ Checkpoint: Wireframe approved before any design begins</div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-number">03</div>
+        <div class="step-title">Research before design</div>
+        <div class="step-body">I study your location, your buyers, your competitors, and the market you're actually selling in — not the market you think you're selling in. Hoskote buyers behave differently from Devanahalli buyers. Farmland buyers want something completely different from apartment buyers.<br><br>You see the research before I start designing. If I've got the buyer wrong, I need to know before the logo is done.</div>
+        <div class="step-checkpoint">→ Checkpoint: Research confirmed with client before design</div>
+      </div>
+
+      <div class="process-step reveal rd1">
+        <div class="step-number">04</div>
+        <div class="step-title">The 80% draft</div>
+        <div class="step-body">When design starts, I show you work at 80% — not a polished final, not a rough sketch. Enough to see exactly where it's going and whether it's right. This is the moment to redirect.<br><br>No surprises at the end. No "here's your logo, take it or leave it." Once you confirm the direction, I build it out fully.</div>
+        <div class="step-checkpoint">→ Checkpoint: Direction confirmed before final build</div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-number">05</div>
+        <div class="step-title">The full system</div>
+        <div class="step-body">Brand guidelines. Social media templates. Ad creatives. Everything documented so any vendor you work with stays consistent without you explaining it every time.<br><br>If you want to run ads: I take over your Meta account or set up a new one. Your money goes directly into your ad wallet — I never touch it. You see every creative before it runs. Daily numbers in plain language.</div>
+        <div class="step-checkpoint">→ Checkpoint: Every creative approved before a rupee is spent</div>
+      </div>
+
+      <div class="process-step reveal rd1">
+        <div class="step-number">06</div>
+        <div class="step-title">When it's working</div>
+        <div class="step-body">Once the ads are converting and the brand is doing its job — we connect everything. CRM setup. WhatsApp automation. Direct pipeline to your sales team so no lead gets lost between the ad and the follow-up call.<br><br>We run small tests first. When something works, we scale it. When something doesn't, I tell you immediately.</div>
+        <div class="step-checkpoint">→ Checkpoint: Results proven before full-scale spend</div>
+      </div>
+
+    </div>
+
+    <p class="process-note reveal">Most projects take 3–6 weeks from first call to live campaign. Timelines depend on how fast you can give feedback — not how fast I can design.</p>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S8 — TESTIMONIAL
+══════════════════════════════════════ -->
+<section class="testimonial-section">
+  <div class="container">
+    <div class="testimonial-grid">
+
+      <div class="testimonial-left reveal">
+        <span class="sec-label">Client word</span>
+        <h2 style="margin-top:6px;">What happens when<br>the right buyer finds you.</h2>
+      </div>
+
+      <div class="reveal rd1">
+        <div class="testimonial-wrap">
+          <p class="t-quote">
+            "It gave us a better purpose and a better audience.
+            We weren't pitching everyone anymore — we were reaching
+            like-minded people who actually wanted this lifestyle.
+            Working professionals and small business owners started
+            reaching out. That changed the conversations, and it led to sales."
+          </p>
+          <div class="t-author">
+            <!-- Replace with: images/royalfarm-founder.jpg — 80x80px circular photo -->
+            <!-- If no photo available, the initials avatar below shows automatically -->
+            <div class="t-avatar">RF</div>
+            <div>
+              <div class="t-name">Founder, Royal Farm</div>
+              <div class="t-role">Real Estate · Bengaluru Outskirts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S9 — PRICING
+══════════════════════════════════════ -->
+<section class="pricing-section">
+  <div class="container">
+
+    <div class="pricing-header reveal">
+      <span class="sec-label">Pricing</span>
+      <h2 style="margin-top:6px;">What it costs.<br>What you get.</h2>
+      <p class="pricing-note">Every package builds on the one before it. Start with the foundation and expand later — or come in at the level your project actually needs.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- PACKAGE 1 -->
+      <div class="pricing-card reveal">
+        <div class="pkg-name">The Foundation</div>
+        <div class="pkg-price">₹30,000</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Logo design — 2 directions presented</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Colour system & typography</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Brand guide for vendor use</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>All source files included</div>
+        </div>
+        <div class="pkg-note">Right for you if: new project launching with nothing existing yet, or what exists is inconsistent.</div>
+      </div>
+
+      <!-- PACKAGE 2 -->
+      <div class="pricing-card reveal rd1">
+        <div class="pkg-name">Brand + Print</div>
+        <div class="pkg-price">₹60,000</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Everything in The Foundation</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Project brochure</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Site hoarding design</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Business cards & letterhead</div>
+        </div>
+        <div class="pkg-note">Right for you if: going to site soon and need everything ready before buyers start visiting.</div>
+      </div>
+
+      <!-- PACKAGE 3 — FEATURED -->
+      <div class="pricing-card featured reveal rd2">
+        <div class="feat-badge">Most requested</div>
+        <div class="pkg-name">Brand + Print + 3D</div>
+        <div class="pkg-price">₹1,10,000</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Everything in Brand + Print</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>3–5 photorealistic exterior renders</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Site overview visualization</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>3D creatives for Meta ads</div>
+        </div>
+        <div class="pkg-note">Right for you if: project is pre-launch and buyers can't see what they're investing in yet.</div>
+      </div>
+
+      <!-- PACKAGE 4 -->
+      <div class="pricing-card reveal rd3">
+        <div class="pkg-name">Full System</div>
+        <div class="pkg-price">Custom</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Everything above</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Meta ad campaigns — your wallet, full transparency</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>CRM setup & WhatsApp automation</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Direct pipeline to your sales team</div>
+        </div>
+        <div class="pkg-note">No fixed price — every project is different. Scope determined after the first call.</div>
+      </div>
+
+    </div>
+
+    <div class="reveal" style="margin-top:20px;padding:20px 24px;background:var(--bg-el);border:1px solid var(--br);border-radius:12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <p style="font-size:.88rem;color:var(--tx3);max-width:480px;margin:0;">Not sure which package fits your project? Tell me about your development and I'll tell you exactly what you need — even if it's less than you were planning to spend.</p>
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20pricing%20for%20my%20project." target="_blank" rel="noopener" class="btn-primary" style="white-space:nowrap;">Let's figure it out →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S10 — FAQ
+══════════════════════════════════════ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-grid">
+
+      <div class="faq-left reveal">
+        <span class="sec-label">FAQ</span>
+        <h2 style="margin-top:6px;margin-bottom:16px;">Questions worth asking<br>before you commit.</h2>
+        <p style="font-size:.88rem;color:var(--tx3);line-height:1.7;">If something isn't answered here, ask me directly. I'll give you a straight answer — not a sales pitch.</p>
+        <div style="margin-top:28px;">
+          <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20have%20a%20question%20before%20getting%20started." target="_blank" rel="noopener" class="btn-secondary">Ask me directly →</a>
+        </div>
+      </div>
+
+      <div class="faq-list reveal rd1">
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-q">Why choose you over a bigger agency?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-a">Most agencies give you a team. You don't know who's actually working on your project — the person you met in the pitch or a junior who joined last month.<br><br>With me, you get one person from start to finish. Strategy, design, ads, execution — all handled directly. No miscommunication between departments. No briefing the same thing twice. If something doesn't work, I fix it. No escalation required.<br><br>And before anything starts, I'll tell you honestly whether you even need my service — or whether your money is better spent somewhere else first.<br><br>Yes, I work alone. That's also why every client gets my direct number, not a support ticket.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-q">How is this different from a local design agency?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-a">A local agency will make you something that looks like real estate branding. Clean layout, decent logo, standard brochure. You've probably seen it — it could be for any developer in any corridor.<br><br>The difference is research. Before I design anything, I study your specific market, your specific buyer, and what's actually stopping them from enquiring. A logo is the output. Understanding your buyer is the work. Most agencies skip the second part.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-q">What if my project isn't ready yet?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-a">Then you shouldn't spend on branding or ads yet.<br><br>If your pricing, positioning, or product isn't clear, no creative will fix that. I'll point that out in the first call itself. Sometimes the right move is to sort the offer before spending money on marketing. I'd rather tell you that upfront than take your money and deliver something that doesn't work.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-q">I already have a logo. Can you work with what I have?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-a">Depends on what's there.<br><br>Sometimes an existing logo just needs a proper system built around it — colours, typography, usage rules — and it works fine. Sometimes it's actively hurting the brand and needs to be replaced. I'll give you an honest assessment in the first call. If what you have is good enough, I'll say so. I'm not going to redesign something that doesn't need redesigning.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-q">Do you guarantee leads or sales?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-a">No one can guarantee sales. Anyone who tells you otherwise is lying or selling you a commission structure that benefits them more than you.<br><br>What I do guarantee is a system that's tested before it's scaled. We start small, track results, and only increase spend once something is working. You see the data every day — not a monthly report, not a summary. The actual numbers.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-q">How does ad spend work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-a">Your money stays in your account.<br><br>I use your existing Meta account or set up a new one. You add the budget directly — I never hold your money or take a commission on spend. Every creative goes through your approval before a rupee is spent. Full transparency from day one.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span class="faq-q">How long does it take to see results?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-a">Branding takes 2–3 weeks depending on scope.<br><br>Ads usually show early signals within the first few days. But real results come after testing — typically 2–4 weeks to find what works, then we scale. We don't rush into full budgets without proof. If the first test doesn't perform, we find out why and fix it before spending more.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S11 — CTA BAND
+══════════════════════════════════════ -->
+<div class="cta-band reveal">
+  <h2>Have a project in<br>the growth corridors?</h2>
+  <p class="lead">Tell me about it. I'll tell you exactly what you need —<br>even if it's less than you were planning to spend.</p>
+  <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20tell%20you%20about%20my%20project." target="_blank" rel="noopener" class="btn-wa">
+    <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+    Tell me about your project
+  </a>
+</div>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer class="site-footer">
+  <div class="footer-logo">Aryan <span>Swaroop</span></div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+    <a href="https://www.instagram.com/arya.nswaroop/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/aryanswaroop/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/keerthanswarup1" target="_blank" rel="noopener">Behance</a>
+  </nav>
+  <p class="footer-copy">© 2026 Aryan Swaroop · Bengaluru, India</p>
+</footer>
+
+<!-- WA FAB -->
+<a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+  <span class="wa-fab-label">Let's Talk</span>
+</a>
+
+<script src="shared.js"></script>
+</body>
+</html>

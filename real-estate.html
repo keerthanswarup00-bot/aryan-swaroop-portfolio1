@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Real estate branding, 3D visualization, Meta ad campaigns, and lead systems for property developers in Bengaluru — Aryan Swaroop.">
+<meta property="og:title" content="Real Estate Branding — Aryan Swaroop">
+<meta property="og:description" content="Brands that make buyers trust before they visit.">
+<meta property="og:image" content="images/og.jpg">
+<title>Real Estate Branding — Aryan Swaroop</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── RE PAGE HERO ── */
+.re-hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 120px var(--pad) 80px;
+  border-bottom: 1px solid var(--br);
+}
+.re-hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.re-hero-left { flex: 1; min-width: 320px; }
+.re-hero-right {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+.re-hero-title {
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  color: var(--tx);
+  margin-bottom: 24px;
+}
+.re-hero-sub {
+  font-size: clamp(.95rem, 1.6vw, 1.1rem);
+  color: var(--tx3);
+  line-height: 1.75;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+.re-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.re-stat-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.re-stat-num {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.re-stat-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  letter-spacing: .05em;
+  line-height: 1.4;
+}
+.re-hero-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--br2);
+  align-self: center;
+}
+.re-hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* ── WHY MATTERS ── */
+.why-section { padding: 96px 0; }
+.why-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+.why-header-right {
+  padding-top: 8px;
+}
+
+/* ── SERVICES ── */
+.services-section {
+  padding: 96px 0;
+  background: var(--bg-sub);
+}
+
+/* ── FEATURED PROJECT ── */
+.featured-project {
+  padding: 96px 0;
+}
+.project-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.project-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project-main-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--bg-sub);
+  border: 1px solid var(--br);
+  border-radius: 16px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.project-secondary-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.project-sec-img {
+  aspect-ratio: 4/3;
+  background: var(--bg-sub);
+  border: 1px solid var(--br);
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.project-info {
+  background: var(--bg-el);
+  border: 1px solid var(--br);
+  border-radius: 16px;
+  padding: 40px;
+  position: sticky;
+  top: 80px;
+}
+.project-scope {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 16px 0 24px;
+}
+.project-scope-tag {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  background: var(--bg-sub);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.project-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 24px 0;
+}
+.project-result-item {
+  background: var(--bg-sub);
+  border-radius: 10px;
+  padding: 14px;
+}
+.project-result-num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.project-result-label {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx3);
+  margin-top: 5px;
+  line-height: 1.3;
+}
+.project-source {
+  font-family: var(--mono);
+  font-size: .6rem;
+  color: var(--tx4);
+  letter-spacing: .04em;
+  margin-top: 8px;
+}
+
+/* ── MARKET INSIGHT ── */
+.insight-band {
+  background: var(--tx);
+  padding: 80px var(--pad);
+}
+.insight-band-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.insight-band h2 { color: #fff; margin-bottom: 20px; }
+.insight-band p { color: rgba(255,255,255,.6); line-height: 1.75; }
+.insight-band-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.insight-point {
+  border-left: 1px solid rgba(255,255,255,.15);
+  padding-left: 20px;
+}
+.insight-point-title {
+  font-size: .92rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: -.01em;
+}
+.insight-point-body {
+  font-size: .82rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.65;
+}
+
+/* ── IMG PLACEHOLDER ── */
+.img-placeholder {
+  background: var(--bg-sub);
+  border: 1px dashed var(--br2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+}
+.ph-label {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx4);
+  letter-spacing: .04em;
+  text-align: center;
+  line-height: 1.5;
+}
+.ph-size {
+  font-family: var(--mono);
+  font-size: .56rem;
+  color: var(--tx4);
+  opacity: .7;
+}
+
+@media (max-width: 1024px) {
+  .why-header { grid-template-columns: 1fr; gap: 24px; }
+  .project-showcase { grid-template-columns: 1fr; }
+  .project-info { position: static; }
+  .insight-band-inner { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 768px) {
+  .re-hero-title { font-size: clamp(2.4rem, 8vw, 3.5rem); }
+  .re-hero-top { flex-direction: column; }
+  .re-hero-right { max-width: 100%; }
+  .re-hero-stats { gap: 16px; }
+  .project-secondary-imgs { grid-template-columns: 1fr; }
+  .project-results { grid-template-columns: 1fr; }
+  .insight-band { padding: 56px var(--pad); }
+}
+</style>
+</head>
+<body style="opacity:0;">
+
+<!-- MOBILE OVERLAY -->
+<div class="mob-overlay" id="mobOverlay">
+  <button class="mob-close" id="mobClose" aria-label="Close">✕</button>
+  <nav class="mob-nav">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="real-estate.html" onclick="closeMob()">Real Estate</a>
+    <a href="case-studies.html" onclick="closeMob()">Case Studies</a>
+    <a href="work.html" onclick="closeMob()">The Work</a>
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20real%20estate%20project." target="_blank" rel="noopener" class="mob-cta" onclick="closeMob()">Let's Talk ↗</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="index.html" class="logo">Aryan <span>Swaroop</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+  </nav>
+  <div class="header-right">
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20real%20estate%20project." target="_blank" rel="noopener" class="cta-btn">Let's Talk</a>
+    <button class="burger" id="burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     S1 — HERO
+══════════════════════════════════════ -->
+<section class="re-hero">
+  <div class="container">
+    <div class="re-hero-top">
+
+      <div class="re-hero-left">
+        <div style="margin-bottom:20px;" class="reveal">
+          <span class="pill pill-re">Real Estate Branding</span>
+        </div>
+        <h1 class="re-hero-title reveal rd1">
+          Brands that make<br>buyers trust before<br>
+          <span class="grad-text">they visit.</span>
+        </h1>
+        <p class="re-hero-sub reveal rd2">
+          Your project is only as strong as how it looks to a buyer
+          who's never met you. I build the brand, the materials,
+          and the campaigns that make serious buyers stop and enquire —
+          before a single site visit.
+        </p>
+        <div class="re-hero-actions reveal rd3">
+          <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20real%20estate%20branding%20project." target="_blank" rel="noopener" class="btn-wa">
+            <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+            Start a project
+          </a>
+          <a href="#re-featured" class="btn-secondary">See the work ↓</a>
+        </div>
+      </div>
+
+      <div class="re-hero-right reveal rd2">
+        <p style="font-size:.82rem;color:var(--tx3);line-height:1.65;border-left:2px solid var(--br2);padding-left:16px;">
+          Working with pre-launch developers across Hoskote,
+          Devanahalli, Sarjapur, and East Bengaluru. Six real estate projects
+          completed. Every project from brief to live campaign — one person,
+          full accountability.
+        </p>
+        <div class="re-hero-stats">
+          <div class="re-stat-inline">
+            <span class="re-stat-num">302</span>
+            <span class="re-stat-label">Leads in 66 days<br>one campaign</span>
+          </div>
+          <div class="re-hero-divider"></div>
+          <div class="re-stat-inline">
+            <span class="re-stat-num">₹82</span>
+            <span class="re-stat-label">Cost per lead<br>half industry avg</span>
+          </div>
+          <div class="re-hero-divider"></div>
+          <div class="re-stat-inline">
+            <span class="re-stat-num">4.3%</span>
+            <span class="re-stat-label">Site visit rate<br>tracked by sales</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S2 — WHY IT MATTERS
+══════════════════════════════════════ -->
+<section class="why-section">
+  <div class="container">
+
+    <div class="why-header">
+      <div class="reveal">
+        <span class="sec-label">Why it matters</span>
+        <h2 style="margin-top:6px;">Your project is only as strong as<br>how it looks to buyers.</h2>
+      </div>
+      <div class="why-header-right reveal rd1">
+        <p class="lead">
+          In real estate, buyers are making the largest financial decision
+          of their lives. The developer that looks more credible, more
+          professional, and more specific to their buyer — wins the
+          enquiry first.
+        </p>
+      </div>
+    </div>
+
+    <div class="why-grid">
+
+      <div class="why-point n-card reveal" style="padding:28px;">
+        <div class="why-pt">Buyers decide before they visit.</div>
+        <div class="why-pd">Most buying decisions begin online. If your brand doesn't communicate trust immediately — in the first scroll — you've lost the lead before a conversation ever started.</div>
+      </div>
+
+      <div class="why-point n-card reveal rd1" style="padding:28px;">
+        <div class="why-pt">3D removes the biggest objection.</div>
+        <div class="why-pd">Under-construction projects face one problem: buyers can't see what they're investing in. Photorealistic renders and VR walkthroughs eliminate that doubt completely and let buyers feel confident before visiting the site.</div>
+      </div>
+
+      <div class="why-point n-card reveal" style="padding:28px;">
+        <div class="why-pt">Ads only work when creatives are strong.</div>
+        <div class="why-pd">Running Meta ads with basic photos burns money. 3D creatives and brand-consistent visuals perform dramatically better — lower cost per lead, higher quality enquiries from buyers who are actually serious.</div>
+      </div>
+
+      <div class="why-point n-card reveal rd1" style="padding:28px;">
+        <div class="why-pt">Generic branding loses quietly.</div>
+        <div class="why-pd">A brand that looks like every other developer in the corridor loses the enquiry without knowing why. Specificity — the right visual language for the right buyer in the right market — builds recognition that compounds.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S3 — SERVICES
+══════════════════════════════════════ -->
+<section class="services-section">
+  <div class="container">
+
+    <span class="sec-label reveal">What I do</span>
+    <h2 class="reveal rd1" style="margin-bottom:8px;">Everything a real estate brand<br>needs to sell.</h2>
+    <p class="lead reveal rd2" style="margin-bottom:48px;max-width:500px;">Six services. One system. Every touchpoint from the first ad to the sales team follow-up.</p>
+
+    <div class="re-services-grid">
+
+      <div class="re-svc reveal">
+        <div class="re-svc-num">01</div>
+        <div class="re-svc-title">Brand Identity</div>
+        <div class="re-svc-desc">A complete visual system that communicates trust and premium quality at every buyer touchpoint — from site hoardings to the sales brochure. Built around your specific project and your specific buyer, not a generic template.</div>
+        <div class="re-svc-tags">
+          <span class="re-svc-tag">Logo Design</span>
+          <span class="re-svc-tag">Colour System</span>
+          <span class="re-svc-tag">Typography</span>
+          <span class="re-svc-tag">Brand Guide</span>
+        </div>
+      </div>
+
+      <div class="re-svc reveal rd1">
+        <div class="re-svc-num">02</div>
+        <div class="re-svc-title">Print & Collateral</div>
+        <div class="re-svc-desc">Premium brochures, site hoardings, layout maps, business cards, and presentation folders. The physical materials buyers hold — designed to close before a site visit. Everything built as one system, not separately.</div>
+        <div class="re-svc-tags">
+          <span class="re-svc-tag">Brochure</span>
+          <span class="re-svc-tag">Hoardings</span>
+          <span class="re-svc-tag">Layout Maps</span>
+          <span class="re-svc-tag">Stationery</span>
+        </div>
+      </div>
+
+      <div class="re-svc reveal rd2">
+        <div class="re-svc-num">03</div>
+        <div class="re-svc-title">3D Visualization</div>
+        <div class="re-svc-desc">Photorealistic exterior renders, site overviews, and individual plot visualizations. Let buyers see exactly what they're investing in before a single brick is laid. These visuals then power the ad campaigns — 3D creatives dramatically outperform basic photo ads.</div>
+        <div class="re-svc-tags">
+          <span class="re-svc-tag">Exterior Renders</span>
+          <span class="re-svc-tag">Site Overview</span>
+          <span class="re-svc-tag">Aerial View</span>
+          <span class="re-svc-tag">Interior Renders</span>
+        </div>
+      </div>
+
+      <div class="re-svc reveal">
+        <div class="re-svc-num">04</div>
+        <div class="re-svc-title">VR Walkthroughs</div>
+        <div class="re-svc-desc">Immersive 360° virtual tours that let buyers physically explore the layout and understand spatial scale — eliminating hesitancy and accelerating decisions. Usable on mobile, desktop, and VR headsets at the site office.</div>
+        <div class="re-svc-tags">
+          <span class="re-svc-tag">360° Tour</span>
+          <span class="re-svc-tag">Mobile VR</span>
+          <span class="re-svc-tag">Headset Ready</span>
+        </div>
+      </div>
+
+      <div class="re-svc reveal rd1">
+        <div class="re-svc-num">05</div>
+        <div class="re-svc-title">Meta Ad Campaigns</div>
+        <div class="re-svc-desc">Facebook and Instagram ads using 3D visuals and branded creatives — awareness, lead generation, and retargeting layers. Your money stays in your wallet. Every creative approved before it runs. Daily performance updates in plain language.</div>
+        <div class="re-svc-tags">
+          <span class="re-svc-tag">Lead Gen</span>
+          <span class="re-svc-tag">Retargeting</span>
+          <span class="re-svc-tag">WhatsApp Forms</span>
+          <span class="re-svc-tag">Daily Reports</span>
+        </div>
+      </div>
+
+      <div class="re-svc reveal rd2">
+        <div class="re-svc-num">06</div>
+        <div class="re-svc-title">Lead System Setup</div>
+        <div class="re-svc-desc">CRM setup, WhatsApp automation, and a direct pipeline to your sales team so no lead gets lost between the ad and the follow-up call. We run tests first and scale only what's working — no blind spending.</div>
+        <div class="re-svc-tags">
+          <span class="re-svc-tag">CRM Setup</span>
+          <span class="re-svc-tag">WhatsApp Auto</span>
+          <span class="re-svc-tag">Sales Pipeline</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S4 — FEATURED PROJECT
+══════════════════════════════════════ -->
+<section class="featured-project" id="re-featured">
+  <div class="container">
+
+    <span class="sec-label reveal">Featured project</span>
+    <h2 class="reveal rd1" style="margin-bottom:48px;">Real work.<br><em style="font-style:italic;color:var(--tx3);">Real results.</em></h2>
+
+    <div class="project-showcase">
+
+      <!-- IMAGES LEFT -->
+      <div class="project-images reveal">
+
+        <!-- Main image: images/paavani-featured.jpg — 1200x750px, best brand shot -->
+        <div class="project-main-img">
+          <div class="img-placeholder" style="aspect-ratio:16/10;border-radius:16px;border:none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            <span class="ph-label">images/paavani-featured.jpg<br>Main brand visual — 1200×750px</span>
+          </div>
+        </div>
+
+        <div class="project-secondary-imgs">
+          <!-- images/paavani-ad-creative.jpg — 600x450px, the ₹82 static ad -->
+          <div class="project-sec-img">
+            <div class="img-placeholder" style="aspect-ratio:4/3;border-radius:12px;border:none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="ph-label">images/paavani-ad.jpg<br>Ad creative — 600×450px</span>
+            </div>
+          </div>
+          <!-- images/paavani-3d.jpg — 600x450px, 3D render -->
+          <div class="project-sec-img">
+            <div class="img-placeholder" style="aspect-ratio:4/3;border-radius:12px;border:none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              <span class="ph-label">images/paavani-3d.jpg<br>3D render — 600×450px</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- INFO RIGHT -->
+      <div class="project-info reveal rd1">
+        <div style="margin-bottom:14px;">
+          <span class="pill pill-re">Real Estate</span>
+          <span class="pill pill-sec" style="margin-left:6px;">Hoskote</span>
+        </div>
+        <h3 style="margin-bottom:8px;">Paavani Properties</h3>
+        <p style="font-size:.88rem;color:var(--tx3);line-height:1.7;margin-bottom:0;">
+          Zero brand presence to complete system. A developer with strong
+          plots and no identity — given a visual language, print collateral,
+          3D renders, and Meta ad campaigns that made serious buyers stop
+          and enquire.
+        </p>
+        <div class="project-scope">
+          <span class="project-scope-tag">Brand Identity</span>
+          <span class="project-scope-tag">Brochure & Print</span>
+          <span class="project-scope-tag">3D Visualization</span>
+          <span class="project-scope-tag">Social Media</span>
+          <span class="project-scope-tag">Meta Ads</span>
+        </div>
+        <div class="project-results">
+          <div class="project-result-item">
+            <div class="project-result-num">302</div>
+            <div class="project-result-label">Leads in 66 days</div>
+          </div>
+          <div class="project-result-item">
+            <div class="project-result-num">₹82</div>
+            <div class="project-result-label">Cost per lead</div>
+          </div>
+          <div class="project-result-item">
+            <div class="project-result-num">4.3%</div>
+            <div class="project-result-label">Site visit rate</div>
+          </div>
+          <div class="project-result-item">
+            <div class="project-result-num">₹125</div>
+            <div class="project-result-label">Avg CPL all campaigns</div>
+          </div>
+        </div>
+        <p class="project-source">All figures from Meta Ads Manager export + client sales CRM · Apr–Sep 2025</p>
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
+          <a href="case-studies.html#cs-paavani" class="btn-primary">Read the full case study →</a>
+          <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20saw%20the%20Paavani%20case%20study%20and%20want%20to%20discuss%20something%20similar." target="_blank" rel="noopener" class="btn-secondary">Discuss a similar project →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S5 — MARKET INSIGHT BAND
+══════════════════════════════════════ -->
+<div class="insight-band">
+  <div class="insight-band-inner">
+
+    <div class="reveal">
+      <span style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:14px;">Market Insight</span>
+      <h2>What running campaigns in<br>Hoskote actually taught me.</h2>
+      <p style="margin-top:16px;">The growth corridors around Bengaluru are not the same market as Whitefield or Koramangala. Different buyers. Different objections. Different creative that works.</p>
+    </div>
+
+    <div class="insight-band-right reveal rd1">
+      <div class="insight-point">
+        <div class="insight-point-title">Clarity beats creativity in Tier 2 markets.</div>
+        <div class="insight-point-body">The best performing ad in Hoskote wasn't a lifestyle video or a premium 3D showcase. It was a static image with plot dimensions and price clearly visible. Buyers here want to know the facts before they trust you — earn trust first, aspirations second.</div>
+      </div>
+      <div class="insight-point">
+        <div class="insight-point-title">The buyer is almost never who the developer thinks.</div>
+        <div class="insight-point-body">Farmland buyers aren't investors — they're office-goers who want space and meaning. Plot buyers aren't wealthy — they're families making a once-in-a-decade decision. Getting the buyer right before designing anything changes every creative decision downstream.</div>
+      </div>
+      <div class="insight-point">
+        <div class="insight-point-title">Being too creative loses local trust.</div>
+        <div class="insight-point-body">Abstract logos and designer-forward layouts signal "this isn't for me" to buyers in growth corridor markets. A brand that looks established, dependable, and local — even if new — builds trust faster than one that looks like it belongs in Indiranagar.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     S6 — PRICING
+══════════════════════════════════════ -->
+<section class="section" style="padding:96px 0;background:var(--bg-sub);">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:48px;">
+      <span class="sec-label">Pricing</span>
+      <h2 style="margin-top:6px;margin-bottom:12px;">What it costs.<br>What you get.</h2>
+      <p style="font-size:.9rem;color:var(--tx3);max-width:500px;line-height:1.7;">Starting rates. Final scope depends on the project — number of plot types, size of collateral, campaign duration. Confirmed after the first call, not after work starts.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="pricing-card reveal">
+        <div class="pkg-name">The Foundation</div>
+        <div class="pkg-price">₹30,000</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Logo design — 2 directions</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Colour system & typography</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Brand guide for vendors</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>All source files</div>
+        </div>
+        <div class="pkg-note">For new projects with nothing existing, or inconsistent existing identity.</div>
+      </div>
+
+      <div class="pricing-card reveal rd1">
+        <div class="pkg-name">Brand + Print</div>
+        <div class="pkg-price">₹60,000</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Everything in Foundation</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Project brochure</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Site hoarding design</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Business cards & letterhead</div>
+        </div>
+        <div class="pkg-note">For developers going to site soon who need everything ready before buyers visit.</div>
+      </div>
+
+      <div class="pricing-card featured reveal rd2">
+        <div class="feat-badge">Most requested</div>
+        <div class="pkg-name">Brand + Print + 3D</div>
+        <div class="pkg-price">₹1,10,000</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Everything in Brand + Print</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>3–5 exterior renders</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Site overview visualization</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>3D creatives for Meta ads</div>
+        </div>
+        <div class="pkg-note">For pre-launch projects where buyers can't see what they're investing in yet.</div>
+      </div>
+
+      <div class="pricing-card reveal rd3">
+        <div class="pkg-name">Full System</div>
+        <div class="pkg-price">Custom</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-items">
+          <div class="pkg-item"><span class="pkg-dot"></span>Everything above</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Meta campaigns — your wallet</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>CRM + WhatsApp automation</div>
+          <div class="pkg-item"><span class="pkg-dot"></span>Sales team pipeline</div>
+        </div>
+        <div class="pkg-note">No fixed price. Scope and timeline confirmed after the first call.</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     S7 — CTA BAND
+══════════════════════════════════════ -->
+<div class="cta-band reveal">
+  <h2>Ready to make your project<br>impossible to ignore?</h2>
+  <p class="lead">Tell me about your development and I'll put together<br>a tailored proposal within 48 hours.</p>
+  <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20real%20estate%20branding%20project." target="_blank" rel="noopener" class="btn-wa">
+    <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+    WhatsApp me directly
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo">Aryan <span>Swaroop</span></div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+    <a href="https://www.instagram.com/arya.nswaroop/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/aryanswaroop/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/keerthanswarup1" target="_blank" rel="noopener">Behance</a>
+  </nav>
+  <p class="footer-copy">© 2026 Aryan Swaroop · Bengaluru, India</p>
+</footer>
+
+<!-- WA FAB -->
+<a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20real%20estate%20project." target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+  <span class="wa-fab-label">Let's Talk</span>
+</a>
+
+<script src="shared.js"></script>
+</body>
+</html>

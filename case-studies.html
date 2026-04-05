@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Case studies — Aryan Swaroop. Four brands transformed with real thinking, real process, and real results.">
+<meta property="og:title" content="Case Studies — Aryan Swaroop">
+<meta property="og:description" content="Four brands. Real problems. Real results.">
+<title>Case Studies — Aryan Swaroop</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── CS PAGE HERO ── */
+.cs-page-hero {
+  padding: 140px var(--pad) 72px;
+  border-bottom: 1px solid var(--br);
+}
+.cs-page-title {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  color: var(--tx);
+  margin-bottom: 16px;
+}
+.cs-page-sub {
+  font-size: clamp(.95rem, 1.6vw, 1.1rem);
+  color: var(--tx3);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+.cs-index {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.cs-index-card {
+  background: var(--bg-el);
+  border: 1px solid var(--br);
+  border-radius: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: box-shadow .2s var(--ease), transform .2s var(--ease), border-color .15s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.cs-index-card:hover {
+  box-shadow: var(--sh-md);
+  transform: translateY(-2px);
+  border-color: var(--br2);
+}
+.cs-index-num {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx4);
+  letter-spacing: .06em;
+  margin-bottom: 5px;
+}
+.cs-index-name {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.015em;
+  margin-bottom: 6px;
+}
+
+/* ── CS BLOCKS ── */
+.cs-block {
+  background: var(--bg-el);
+  border: 1px solid var(--br);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  scroll-margin-top: 80px;
+}
+.cs-block-header {
+  padding: 48px 52px 36px;
+  border-bottom: 1px solid var(--br);
+}
+.cs-block-body {
+  padding: 44px 52px;
+}
+.cs-category {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--tx2);
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cs-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.035em;
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+.cs-tagline {
+  font-size: clamp(.92rem, 1.5vw, 1.05rem);
+  color: var(--tx3);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 28px;
+}
+.cs-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.cs-meta-item {
+  background: var(--bg-sub);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.cs-meta-label {
+  font-family: var(--mono);
+  font-size: .6rem;
+  color: var(--tx3);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.cs-meta-val {
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--tx);
+  letter-spacing: -.01em;
+}
+
+/* ── CS BODY ELEMENTS ── */
+.cs-hero-placeholder {
+  width: 100%;
+  aspect-ratio: 21/9;
+  background: var(--bg-sub);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  border: 1px dashed var(--br2);
+}
+.cs-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+.cs-body-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.cs-body-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.018em;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+.cs-body-p {
+  font-size: .88rem;
+  color: var(--tx3);
+  line-height: 1.75;
+}
+.cs-section-tag {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+.cs-section-h {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.018em;
+  margin-bottom: 12px;
+}
+.cs-section-p {
+  font-size: .88rem;
+  color: var(--tx3);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.cs-divider {
+  height: 1px;
+  background: var(--br);
+  margin: 36px 0;
+}
+.cs-imgs-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.cs-imgs-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.cs-img-slot {
+  aspect-ratio: 4/3;
+  background: var(--bg-sub);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px dashed var(--br2);
+}
+.cs-img-slot.wide {
+  aspect-ratio: 16/7;
+  grid-column: span 2;
+}
+.cs-outcomes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 32px 0;
+}
+.cs-outcome {
+  background: var(--bg-sub);
+  border-radius: 12px;
+  padding: 18px 16px;
+}
+.cs-outcome-num {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.cs-outcome-label {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx3);
+  line-height: 1.4;
+}
+.cs-quote {
+  background: var(--bg-sub);
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin: 28px 0;
+  border-left: 3px solid var(--br2);
+}
+.cs-quote-text {
+  font-size: clamp(.92rem, 1.5vw, 1.05rem);
+  color: var(--tx);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+.cs-quote-credit {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  letter-spacing: .04em;
+}
+.cs-verified-note {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx4);
+  letter-spacing: .04em;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.cs-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 52px;
+  border-top: 1px solid var(--br);
+  text-decoration: none;
+  color: inherit;
+  transition: background .15s;
+}
+.cs-next:hover { background: var(--bg-hov); }
+.cs-next-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx4);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.cs-next-name {
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.015em;
+}
+.cs-next-arrow {
+  font-size: 1.1rem;
+  color: var(--tx3);
+  transition: transform .2s, color .15s;
+}
+.cs-next:hover .cs-next-arrow { color: var(--tx); transform: translateX(4px); }
+
+/* img placeholder shared */
+.ph-label {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx4);
+  letter-spacing: .04em;
+  text-align: center;
+  line-height: 1.5;
+}
+.ph-size {
+  font-family: var(--mono);
+  font-size: .56rem;
+  color: var(--tx4);
+  opacity: .7;
+}
+
+@media (max-width: 1024px) {
+  .cs-block-header, .cs-block-body { padding: 32px 32px; }
+  .cs-next { padding: 18px 32px; }
+  .cs-meta { grid-template-columns: repeat(2, 1fr); }
+  .cs-outcomes { grid-template-columns: repeat(2, 1fr); }
+  .cs-body-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cs-imgs-3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .cs-page-hero { padding: 110px var(--pad) 48px; }
+  .cs-block-header, .cs-block-body { padding: 24px 20px; }
+  .cs-next { padding: 16px 20px; }
+  .cs-meta { grid-template-columns: 1fr 1fr; }
+  .cs-outcomes { grid-template-columns: 1fr 1fr; }
+  .cs-imgs-2, .cs-imgs-3 { grid-template-columns: 1fr; }
+  .cs-img-slot.wide { grid-column: span 1; aspect-ratio: 4/3; }
+  .cs-title { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+}
+</style>
+</head>
+<body style="opacity:0;">
+
+<!-- MOBILE OVERLAY -->
+<div class="mob-overlay" id="mobOverlay">
+  <button class="mob-close" id="mobClose">✕</button>
+  <nav class="mob-nav">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="real-estate.html" onclick="closeMob()">Real Estate</a>
+    <a href="case-studies.html" onclick="closeMob()">Case Studies</a>
+    <a href="work.html" onclick="closeMob()">The Work</a>
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="mob-cta" onclick="closeMob()">Let's Talk ↗</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="index.html" class="logo">Aryan <span>Swaroop</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+  </nav>
+  <div class="header-right">
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="cta-btn">Let's Talk</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     PAGE HERO
+══════════════════════════════════════ -->
+<div class="cs-page-hero">
+  <div class="container">
+    <span class="sec-label reveal">Case Studies</span>
+    <h1 class="cs-page-title reveal rd1">The work,<br><em style="font-style:italic;color:var(--tx3);">in depth.</em></h1>
+    <p class="cs-page-sub reveal rd2">Four brands transformed. Real problems, real thinking, real results — from real estate to coffee to security.</p>
+
+    <div class="cs-index reveal rd3">
+      <a href="#cs-paavani" class="cs-index-card">
+        <div class="cs-index-num">01</div>
+        <div class="cs-index-name">Paavani Properties</div>
+        <span class="pill pill-re">Real Estate</span>
+      </a>
+      <a href="#cs-royalfarm" class="cs-index-card">
+        <div class="cs-index-num">02</div>
+        <div class="cs-index-name">Royal Farm</div>
+        <span class="pill pill-farm">Real Estate</span>
+      </a>
+      <a href="#cs-ishav" class="cs-index-card">
+        <div class="cs-index-num">03</div>
+        <div class="cs-index-name">Isha V Security</div>
+        <span class="pill pill-sec">Security</span>
+      </a>
+      <a href="#cs-brahmi" class="cs-index-card">
+        <div class="cs-index-num">04</div>
+        <div class="cs-index-name">Brahmi Coffee</div>
+        <span class="pill pill-food">F&B</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="section-sm">
+<div class="container" style="display:flex;flex-direction:column;gap:12px;">
+
+<!-- ══════════════════════════════════════
+     CS 01 — PAAVANI PROPERTIES
+══════════════════════════════════════ -->
+<div class="cs-block" id="cs-paavani">
+  <div class="cs-block-header">
+    <div class="cs-category">
+      <span>01</span>
+      <span>·</span>
+      <span>Real Estate · Hoskote, Bengaluru</span>
+      <span style="margin-left:auto;display:flex;gap:6px;">
+        <span class="pill pill-re">Real Estate</span>
+        <span class="pill pill-sec">Hoskote</span>
+      </span>
+    </div>
+    <h2 class="cs-title">Paavani Properties</h2>
+    <p class="cs-tagline">Zero brand presence to complete system — in a market flooded with competitors. 302 leads in 66 days at ₹82 per lead. 4.3% lead-to-site-visit rate tracked call by call by the sales team.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Client</div>
+        <div class="cs-meta-val">Paavani Properties & Marketing</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Scope</div>
+        <div class="cs-meta-val">End-to-End Creative</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Best result</div>
+        <div class="cs-meta-val">302 leads · ₹82 CPL</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Deliverables</div>
+        <div class="cs-meta-val">Identity · Print · 3D · Meta Ads</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block-body">
+
+    <!-- HERO IMAGE -->
+    <!-- Replace: images/paavani-cs-hero.jpg — 1600x686px, wide brand shot -->
+    <div class="cs-hero-placeholder">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span class="ph-label">images/paavani-cs-hero.jpg — Full brand overview · 1600×686px</span>
+    </div>
+
+    <!-- PROBLEM + INSIGHT -->
+    <div class="cs-body-grid">
+      <div>
+        <div class="cs-body-label">The Problem</div>
+        <div class="cs-body-title">Strong project.<br>No brand to match.</div>
+        <p class="cs-body-p">Paavani had well-planned plots with genuine value for buyers. But inconsistent visuals, no brand system, and no digital presence meant serious buyers couldn't trust them. In Hoskote — a market with dozens of competing builders — looking unpolished isn't neutral. It actively costs you leads before a single conversation starts.</p>
+        <p class="cs-body-p" style="margin-top:12px;">They came through a referral with one brief: make us look trustworthy enough that a local buyer picks up the phone.</p>
+      </div>
+      <div>
+        <div class="cs-body-label">The Insight</div>
+        <div class="cs-body-title">Hoskote buyers are practical.<br>Design for clarity, not craft.</div>
+        <p class="cs-body-p">Hoskote buyers want plot dimensions, price, legal status, and confidence the builder won't disappear. Abstract "premium" branding — the kind that works in Whitefield or Sarjapur — reads as irrelevant or suspicious here.</p>
+        <p class="cs-body-p" style="margin-top:12px;">The design decision wasn't about taste. It was about communication. Clarity was the job. The ad data proved it.</p>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- BRAND IDENTITY -->
+    <span class="cs-section-tag">Brand Identity</span>
+    <div class="cs-section-h">A visual language that earns trust.</div>
+    <p class="cs-section-p">The identity was built around clean geometry, confident typography, and a grounded colour system. Every element documented into a brand guide so consistency holds across all future production — hoardings, brochures, digital, and ads all look like one decision was made, not four separate ones.</p>
+
+    <div class="cs-imgs-2">
+      <!-- images/paavani-logo.jpg — 800x600px -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/paavani-logo.jpg<br>Logo & identity system · 800×600px</span>
+      </div>
+      <!-- images/paavani-colours.jpg — 800x600px -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/paavani-colours.jpg<br>Colour & typography system · 800×600px</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- PRINT -->
+    <span class="cs-section-tag">Print & Collateral</span>
+    <div class="cs-section-h">Every touchpoint communicates value.</div>
+    <p class="cs-section-p">Premium brochures, site hoardings, layout maps, business cards, and presentation folders. The brochure is often the first physical object a buyer holds — it had to justify the decision to enquire further. Information hierarchy first: what are the plots, how big, what's the price — answerable within 30 seconds of opening.</p>
+
+    <div class="cs-imgs-3">
+      <!-- images/paavani-brochure.jpg — 800x600px -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/paavani-brochure.jpg<br>Project brochure · 800×600px</span>
+      </div>
+      <!-- images/paavani-hoarding.jpg — 800x600px -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/paavani-hoarding.jpg<br>Site hoarding · 800×600px</span>
+      </div>
+      <!-- images/paavani-card.jpg — 800x600px -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/paavani-card.jpg<br>Business card · 800×600px</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- 3D + ADS -->
+    <span class="cs-section-tag">3D Visualization & Meta Ads</span>
+    <div class="cs-section-h">See it before it's built.</div>
+    <p class="cs-section-p">Photorealistic 3D renders let buyers explore the layout, understand scale, and build confidence before visiting the site. These visuals then powered the Meta ad campaigns — 3D creatives consistently outperformed competitors running basic photo ads.</p>
+    <p class="cs-section-p">But the best performing creative of the entire campaign wasn't the 3D render. It was a static image with the plot layout, dimensions, and price clearly visible. 302 leads. ₹82 each. The simplest idea performed best — confirming the core insight about this market.</p>
+
+    <div class="cs-imgs-2">
+      <!-- images/paavani-3d.jpg — 1000x600px -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/paavani-3d.jpg<br>3D exterior render · 1000×600px</span>
+      </div>
+      <!-- images/paavani-ads.jpg — 1000x600px, the ₹82 static ad -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/paavani-ads.jpg<br>The ₹82 static ad creative · 1000×600px</span>
+      </div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="cs-outcomes">
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">302</div>
+        <div class="cs-outcome-label">Lead form submissions<br>in 66 days</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">₹82</div>
+        <div class="cs-outcome-label">Cost per lead<br>best campaign</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">4.3%</div>
+        <div class="cs-outcome-label">Lead-to-site-visit<br>tracked by sales CRM</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">₹125</div>
+        <div class="cs-outcome-label">Average CPL<br>across all campaigns</div>
+      </div>
+    </div>
+    <p class="cs-verified-note">All figures exported directly from Meta Ads Manager. Site visit rate tracked in client sales CRM, April–September 2025. Earlier campaign data not available for export.</p>
+
+  </div>
+
+  <a href="#cs-royalfarm" class="cs-next">
+    <div>
+      <div class="cs-next-label">Next case study</div>
+      <div class="cs-next-name">Royal Farm →</div>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+</div>
+
+<!-- ══════════════════════════════════════
+     CS 02 — ROYAL FARM
+══════════════════════════════════════ -->
+<div class="cs-block" id="cs-royalfarm">
+  <div class="cs-block-header">
+    <div class="cs-category">
+      <span>02</span>
+      <span>·</span>
+      <span>Real Estate · Farmland · Bengaluru Outskirts</span>
+      <span style="margin-left:auto;display:flex;gap:6px;">
+        <span class="pill pill-re">Real Estate</span>
+        <span class="pill pill-sec">Farmland</span>
+      </span>
+    </div>
+    <h2 class="cs-title">Royal Farm</h2>
+    <p class="cs-tagline">A developer had already paid a large agency for a brand. It didn't work — not because it was badly made, but because it was built for the wrong buyer. Here's what changed.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Client</div>
+        <div class="cs-meta-val">Royal Farm</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Scope</div>
+        <div class="cs-meta-val">Identity · Mascot · Print · Ads</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Key idea</div>
+        <div class="cs-meta-val">The Office-Goer Mascot</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Outcome</div>
+        <div class="cs-meta-val">Sales confirmed by client</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block-body">
+
+    <!-- HERO IMAGE -->
+    <!-- images/royalfarm-cs-hero.jpg — 1600x686px, mascot in context wide shot -->
+    <div class="cs-hero-placeholder">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span class="ph-label">images/royalfarm-cs-hero.jpg — Mascot overview wide · 1600×686px</span>
+    </div>
+
+    <!-- THE BRIEF + DISPLACEMENT -->
+    <div class="cs-body-grid">
+      <div>
+        <div class="cs-body-label">The Brief</div>
+        <div class="cs-body-title">A large agency had already<br>been here first.</div>
+        <p class="cs-body-p">Royal Farm had already paid a well-known real estate marketing agency for a brand. Professional work, by the numbers. The client hated it — not because it was badly made, but because it missed the entire point of what they were selling.</p>
+        <p class="cs-body-p" style="margin-top:12px;">The agency had treated farmland like a real estate investment product: clean, premium, aspirational in the standard sense. Royal Farm's actual buyer doesn't want a manicured green space. They want dirt under their fingernails on a Saturday morning.</p>
+      </div>
+      <div>
+        <div class="cs-body-label">The Insight</div>
+        <div class="cs-body-title">Who actually buys<br>farmland plots?</div>
+        <p class="cs-body-p">Not a farmer. Not an investor. An office-goer — tired of the city grind, wanting something real to grow on weekends, something to pass to their family, a side income that feels meaningful.</p>
+        <p class="cs-body-p" style="margin-top:12px;">No farmland brand was speaking to this person directly. Every competitor was pitching land as a financial asset. Royal Farm was going to be the first to pitch it as an identity.</p>
+      </div>
+    </div>
+
+    <!-- BEFORE AFTER -->
+    <div class="cs-imgs-2" style="margin-bottom:12px;">
+      <!-- images/royalfarm-before.jpg — previous agency work -->
+      <div class="cs-img-slot" style="position:relative;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/royalfarm-before.jpg<br>Previous agency branding · 800×600px</span>
+        <span style="position:absolute;top:10px;left:10px;background:var(--bg-hov);font-family:var(--mono);font-size:.6rem;color:var(--tx3);padding:3px 8px;border-radius:4px;">Before</span>
+      </div>
+      <!-- images/royalfarm-after.jpg — your work -->
+      <div class="cs-img-slot" style="position:relative;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/royalfarm-after.jpg<br>New brand direction · 800×600px</span>
+        <span style="position:absolute;top:10px;left:10px;background:#E8F5E8;font-family:var(--mono);font-size:.6rem;color:#2D6A2D;padding:3px 8px;border-radius:4px;">After</span>
+      </div>
+    </div>
+    <p style="font-size:.78rem;color:var(--tx4);font-family:var(--mono);text-align:center;margin-bottom:32px;letter-spacing:.04em;">Previous agency direction vs. new brand — same client, different buyer understanding.</p>
+
+    <div class="cs-divider"></div>
+
+    <!-- MASCOT -->
+    <span class="cs-section-tag">Mascot & Brand Story</span>
+    <div class="cs-section-h">Meet the man who loves his land.</div>
+    <p class="cs-section-p">The mascot is an office-goer — briefcase in one hand, a small plant in the other. He loves growing vegetables on weekends. He loves his family. He wants something real outside the cubicle. This character became the emotional anchor of the entire brand — every piece of communication spoke through him, not around him.</p>
+
+    <div class="cs-imgs-2">
+      <!-- images/royalfarm-mascot.jpg — mascot final illustration -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/royalfarm-mascot.jpg<br>Brand mascot illustration · 800×600px</span>
+      </div>
+      <!-- images/royalfarm-logo.jpg — logo and identity -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/royalfarm-logo.jpg<br>Logo & identity system · 800×600px</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- BROCHURE -->
+    <span class="cs-section-tag">3-Folder Brochure System</span>
+    <div class="cs-section-h">A brochure that tells a story.</div>
+    <p class="cs-section-p">Instead of a standard brochure, a 3-folder system — each folder revealing a different chapter. Folder 1: the vision and the lifestyle. Folder 2: the plots and the land. Folder 3: the practicalities — water, electricity, growing support, resale value. Buyers don't read brochures linearly — but when they do open one, they need to feel something in the first ten seconds.</p>
+
+    <div class="cs-imgs-3">
+      <!-- images/royalfarm-folder1.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/royalfarm-folder1.jpg<br>Folder 1 — The Vision · 800×600px</span>
+      </div>
+      <!-- images/royalfarm-folder2.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/royalfarm-folder2.jpg<br>Folder 2 — The Plots · 800×600px</span>
+      </div>
+      <!-- images/royalfarm-folder3.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/royalfarm-folder3.jpg<br>Folder 3 — The Life · 800×600px</span>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL -->
+    <div class="cs-quote">
+      <p class="cs-quote-text">"It gave us a better purpose and a better audience. We weren't pitching everyone anymore — we were reaching like-minded people who actually wanted this lifestyle. Working professionals and small business owners started reaching out. That changed the conversations, and it led to sales."</p>
+      <div class="cs-quote-credit">— Founder, Royal Farm · Real Estate · Bengaluru Outskirts</div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="cs-outcomes">
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">Displaced</div>
+        <div class="cs-outcome-label">Large agency — wrong buyer, wrong brand</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">3</div>
+        <div class="cs-outcome-label">Folder brochure system — first in farmland category</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">Full</div>
+        <div class="cs-outcome-label">Brand identity · mascot · print · hoardings · Meta ads</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">Sales</div>
+        <div class="cs-outcome-label">Plot sales confirmed by founder post-campaign</div>
+      </div>
+    </div>
+    <p class="cs-verified-note">Sales outcome is client-reported from direct conversation. Specific figures not disclosed per client request.</p>
+
+  </div>
+
+  <a href="#cs-ishav" class="cs-next">
+    <div>
+      <div class="cs-next-label">Next case study</div>
+      <div class="cs-next-name">Isha V Security →</div>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+</div>
+
+<!-- ══════════════════════════════════════
+     CS 03 — ISHA V SECURITY
+══════════════════════════════════════ -->
+<div class="cs-block" id="cs-ishav">
+  <div class="cs-block-header">
+    <div class="cs-category">
+      <span>03</span>
+      <span>·</span>
+      <span>Security & Facility Management · Bengaluru</span>
+      <span style="margin-left:auto;">
+        <span class="pill pill-sec">Security</span>
+      </span>
+    </div>
+    <h2 class="cs-title">Isha V Security</h2>
+    <p class="cs-tagline">A brand built from a name, a faith, and a very specific idea of what protection means. Started with 10 people. Now 250+ staff serving 60+ corporate offices and residential apartments across Bengaluru.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Client</div>
+        <div class="cs-meta-val">Isha V Facility Management</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Scope</div>
+        <div class="cs-meta-val">Brand Identity & System</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Outcome</div>
+        <div class="cs-meta-val">10 → 250+ Staff</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Clients after</div>
+        <div class="cs-meta-val">60+ Companies & Apartments</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block-body">
+
+    <!-- HERO IMAGE -->
+    <!-- images/ishav-cs-hero.jpg — 1600x686px, identity system overview -->
+    <div class="cs-hero-placeholder">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span class="ph-label">images/ishav-cs-hero.jpg — Identity system overview · 1600×686px</span>
+    </div>
+
+    <!-- THE STORY -->
+    <div class="cs-body-grid">
+      <div>
+        <div class="cs-body-label">The Origin</div>
+        <div class="cs-body-title">A name, a faith,<br>and a business idea.</div>
+        <p class="cs-body-p">The founder came with a business idea and a name: Isha V — a personal reference to Shiva. He's deeply religious, and the name carried meaning he didn't want to lose in the branding.</p>
+        <p class="cs-body-p" style="margin-top:12px;">The brief was to build a brand identity from scratch for a security and facility management agency that didn't exist yet — and to honour the origin without making it explicitly religious.</p>
+      </div>
+      <div>
+        <div class="cs-body-label">The Insight</div>
+        <div class="cs-body-title">Shiva as protector,<br>not destroyer.</div>
+        <p class="cs-body-p">Shiva has two sides in popular understanding — destruction and protection. The brand needed only one of them. The calm side. The protector. The one that communities and families trust to be present, reliable, and steady.</p>
+        <p class="cs-body-p" style="margin-top:12px;">The identity was built around that quality — clean, authoritative, grounded. A logo that referenced the origin without being heavy-handed. Typography and colour that communicated professionalism to corporate clients while feeling approachable to residential ones.</p>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- IDENTITY -->
+    <span class="cs-section-tag">Brand Identity</span>
+    <div class="cs-section-h">Sharp, minimal, built for trust.</div>
+    <p class="cs-section-p">The identity needed to communicate precision, reliability, and modern expertise at a glance. In security, clients need to feel safe handing over their buildings. Without a brand that communicates professionalism immediately, that conversation never happens.</p>
+
+    <div class="cs-imgs-2">
+      <!-- images/ishav-logo.jpg -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/ishav-logo.jpg<br>Logo & mark · 800×600px</span>
+      </div>
+      <!-- images/ishav-identity.jpg -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/ishav-identity.jpg<br>Identity system · 800×600px</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- APPLICATION -->
+    <span class="cs-section-tag">Brand Application</span>
+    <div class="cs-section-h">Applied across every surface.</div>
+    <p class="cs-section-p">Uniforms, ID cards, letterheads, vehicle branding, and presentation materials — every touchpoint now communicated the same professionalism. The brand became a selling tool in itself. When a potential client sees the uniform, the ID card, and the letterhead all looking like one intentional decision — trust is established before a word is said.</p>
+
+    <div class="cs-imgs-3">
+      <!-- images/ishav-uniform.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/ishav-uniform.jpg<br>Uniform design · 800×600px</span>
+      </div>
+      <!-- images/ishav-card.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/ishav-card.jpg<br>ID card · 800×600px</span>
+      </div>
+      <!-- images/ishav-collateral.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/ishav-collateral.jpg<br>Letterhead & collateral · 800×600px</span>
+      </div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="cs-outcomes">
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">10→250+</div>
+        <div class="cs-outcome-label">Staff growth after rebrand</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">60+</div>
+        <div class="cs-outcome-label">Corporate offices & apartments served</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">Full</div>
+        <div class="cs-outcome-label">Brand system — logo · cards · web · letterhead</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">City</div>
+        <div class="cs-outcome-label">Wide recognition across Bengaluru</div>
+      </div>
+    </div>
+    <p class="cs-verified-note">Outcome figures are client-reported from direct conversation with the founder, March 2026.</p>
+
+  </div>
+
+  <a href="#cs-brahmi" class="cs-next">
+    <div>
+      <div class="cs-next-label">Next case study</div>
+      <div class="cs-next-name">Brahmi Coffee Roasters →</div>
+    </div>
+    <span class="cs-next-arrow">→</span>
+  </a>
+</div>
+
+<!-- ══════════════════════════════════════
+     CS 04 — BRAHMI COFFEE
+══════════════════════════════════════ -->
+<div class="cs-block" id="cs-brahmi">
+  <div class="cs-block-header">
+    <div class="cs-category">
+      <span>04</span>
+      <span>·</span>
+      <span>Food & Beverage · South India</span>
+      <span style="margin-left:auto;">
+        <span class="pill pill-food">F&B</span>
+      </span>
+    </div>
+    <h2 class="cs-title">Brahmi Coffee<br>Roasters</h2>
+    <p class="cs-tagline">A founder with too many ideas, a crowded market, and one genuine cultural insight that changed everything. Bring the village to the city. The hills, the festival morning, the aroma of filter coffee filling the house.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Client</div>
+        <div class="cs-meta-val">Brahmi Coffee Roasters</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Scope</div>
+        <div class="cs-meta-val">Identity · Mascot · Packaging</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Sub-brand</div>
+        <div class="cs-meta-val">Shastry Filter Coffee</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Status</div>
+        <div class="cs-meta-val">Pre-launch · Full system delivered</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-block-body">
+
+    <!-- HERO IMAGE -->
+    <!-- images/brahmi-cs-hero.jpg — 1600x686px, packaging lineup wide -->
+    <div class="cs-hero-placeholder">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span class="ph-label">images/brahmi-cs-hero.jpg — Full packaging lineup wide · 1600×686px</span>
+    </div>
+
+    <!-- THE PROBLEM + STRATEGY -->
+    <div class="cs-body-grid">
+      <div>
+        <div class="cs-body-label">The Problem</div>
+        <div class="cs-body-title">Too many ideas.<br>None of them connected.</div>
+        <p class="cs-body-p">The founder came with a vision — a health-forward coffee brand called Brahmi, built around the medicinal flower, eventually expanding into wellness using the chakra system as a product architecture. She also had sub-brands, multiple product lines, and visual identities — none of it resolved.</p>
+        <p class="cs-body-p" style="margin-top:12px;">The first thing I did wasn't design. It was edit. One brand before many. One market before expanding. Coffee before wellness — because coffee has a clear buyer, a clear ritual, and a clear shelf.</p>
+      </div>
+      <div>
+        <div class="cs-body-label">The Market</div>
+        <div class="cs-body-title">Premium filter coffee<br>was already claimed.</div>
+        <p class="cs-body-p">Big FMCG brands had entered the premium filter coffee space with clean packaging, heritage copy, and serious distribution budgets. Going premium-minimal was a losing position for a new brand.</p>
+        <p class="cs-body-p" style="margin-top:12px;">So we went the other direction entirely. After talking to older residents in Bengaluru — people in their 50s and 60s who grew up in South Indian households — one consistent memory kept coming up: waking up on a festival morning to the smell of filter coffee filling the entire house.</p>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- THE INSIGHT -->
+    <span class="cs-section-tag">The Cultural Insight</span>
+    <div class="cs-section-h">Bring the village to the city.</div>
+    <p class="cs-section-p">No coffee brand was owning that feeling. Every competitor was moving toward the city — premium, minimal, aspirational. We went back to the village. The hills. The coffee beans grown and sold at the source. The morning your grandmother made filter coffee and the whole house smelled like it.</p>
+    <p class="cs-section-p">The brand became that feeling. Not luxury. Not minimal. The warmth of a South Indian festival morning — the aroma, the ritual, the homecoming.</p>
+
+    <div class="cs-divider"></div>
+
+    <!-- MASCOT -->
+    <span class="cs-section-tag">The Mascot</span>
+    <div class="cs-section-h">The woman who makes it.</div>
+    <p class="cs-section-p">The mascot is a woman in her 30s — a homemaker, freshly bathed, draped in a South Indian saree, her wet hair wrapped in a white cloth the way Indian women do before they begin the day's work. She's drawing rangoli at the threshold. It's a festival morning. The coffee is already on.</p>
+    <p class="cs-section-p">Every element was chosen for cultural specificity: the wet hair cloth, the rangoli, the saree drape, the threshold. Not generic "Indian aesthetics" — the exact visual vocabulary of a South Indian festival morning that the target buyer recognises immediately and feels something about.</p>
+
+    <div class="cs-imgs-2">
+      <!-- images/brahmi-logo.jpg -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/brahmi-logo.jpg<br>Brahmi brand identity · 800×600px</span>
+      </div>
+      <!-- images/brahmi-mascot.jpg -->
+      <div class="cs-img-slot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/brahmi-mascot.jpg<br>Shastry mascot illustration · 800×600px</span>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- PACKAGING -->
+    <span class="cs-section-tag">Packaging Design — Shastry Filter Coffee</span>
+    <div class="cs-section-h">Packaging that carries the story.</div>
+    <p class="cs-section-p">The sub-brand Shastry Filter Coffee carries this identity — the mascot, the packaging, the colour system — all built to feel like it came from those hills and those homes, not from a branding agency. Rich earthy tones, refined typography, the mascot drawing rangoli on the front panel. The packaging became the brand's strongest marketing asset.</p>
+
+    <div class="cs-imgs-3">
+      <!-- images/brahmi-pack1.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/brahmi-pack1.jpg<br>Packaging variant 1 · 800×600px</span>
+      </div>
+      <!-- images/brahmi-pack2.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/brahmi-pack2.jpg<br>Packaging variant 2 · 800×600px</span>
+      </div>
+      <!-- images/brahmi-pack3.jpg -->
+      <div class="cs-img-slot">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+        <span class="ph-label">images/brahmi-pack3.jpg<br>Packaging variant 3 · 800×600px</span>
+      </div>
+    </div>
+
+    <!-- LINEUP WIDE -->
+    <div class="cs-imgs-2">
+      <div class="cs-img-slot wide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#C4C4C4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span class="ph-label">images/brahmi-lineup.jpg — Full product lineup flat lay · 1400×600px</span>
+      </div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="cs-outcomes">
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">2</div>
+        <div class="cs-outcome-label">Brand identities — Brahmi main + Shastry sub-brand</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">Full</div>
+        <div class="cs-outcome-label">System — identity · mascot · packaging · social · guidelines</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">1</div>
+        <div class="cs-outcome-label">Cultural insight — South Indian festival morning nostalgia</div>
+      </div>
+      <div class="cs-outcome">
+        <div class="cs-outcome-num">Pre</div>
+        <div class="cs-outcome-label">Launch — full brand system delivered and documented</div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg-sub);border-radius:12px;padding:20px 24px;margin-top:4px;">
+      <p style="font-size:.85rem;color:var(--tx3);line-height:1.7;font-style:italic;">"This project wasn't primarily a design problem. It was a strategic problem — a founder who needed clarity before creativity. The design only worked because the positioning was right first. That sequence — understand the buyer, find the insight, then design — is how every project I take on works."</p>
+    </div>
+
+  </div>
+
+  <!-- No next — last study. CTA instead -->
+  <div style="padding:28px 52px;border-top:1px solid var(--br);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div>
+      <div style="font-family:var(--mono);font-size:.65rem;color:var(--tx4);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;">Working on something similar?</div>
+      <div style="font-size:.92rem;font-weight:600;color:var(--tx);letter-spacing:-.015em;">Tell me about your project →</div>
+    </div>
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20saw%20your%20case%20studies%20and%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener" class="btn-wa" style="white-space:nowrap;">
+      <svg viewBox="0 0 24 24" fill="white" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+      WhatsApp me directly
+    </a>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band reveal">
+  <h2>Worked on a project like<br>one of these?</h2>
+  <p class="lead">Tell me about your development and I'll show you<br>how this approach applies to your specific market.</p>
+  <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20saw%20your%20case%20studies%20and%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener" class="btn-wa">
+    <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+    Tell me about your project
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo">Aryan <span>Swaroop</span></div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+    <a href="https://www.instagram.com/arya.nswaroop/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/aryanswaroop/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/keerthanswarup1" target="_blank" rel="noopener">Behance</a>
+  </nav>
+  <p class="footer-copy">© 2026 Aryan Swaroop · Bengaluru, India</p>
+</footer>
+
+<!-- WA FAB -->
+<a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+  <span class="wa-fab-label">Let's Talk</span>
+</a>
+
+<script src="shared.js"></script>
+</body>
+</html>

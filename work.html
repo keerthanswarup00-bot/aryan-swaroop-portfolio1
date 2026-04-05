@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio — Aryan Swaroop. 10 projects across real estate, branding, packaging, and digital production.">
+<meta property="og:title" content="The Work — Aryan Swaroop">
+<meta property="og:description" content="10 projects. Real estate, branding, packaging, digital.">
+<title>The Work — Aryan Swaroop</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── WORK HERO ── */
+.work-hero {
+  padding: 140px var(--pad) 64px;
+  border-bottom: 1px solid var(--br);
+}
+.work-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+}
+.work-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.01;
+  letter-spacing: -.04em;
+  color: var(--tx);
+  margin-bottom: 16px;
+}
+.work-sub {
+  font-size: clamp(.92rem, 1.5vw, 1.05rem);
+  color: var(--tx3);
+  line-height: 1.75;
+  max-width: 380px;
+}
+.work-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 6px;
+}
+.work-count-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.work-count-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.work-count-num {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.work-count-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  letter-spacing: .05em;
+}
+.work-count-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--br2);
+  align-self: center;
+}
+
+/* ── FILTER BAR ── */
+.filter-section {
+  padding: 28px var(--pad) 0;
+  border-bottom: 1px solid var(--br);
+  background: var(--bg);
+  position: sticky;
+  top: 56px;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(250,250,249,.92);
+}
+.filter-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 18px;
+}
+.filter-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx4);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+
+/* ── PROJECT GRID ── */
+.projects-section {
+  padding: 48px 0 96px;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* ── PROJECT CARD ── */
+.project-card {
+  background: var(--bg-el);
+  border: 1px solid var(--br);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .28s var(--ease), transform .28s var(--ease), border-color .2s;
+}
+.project-card:hover {
+  box-shadow: var(--sh-hov);
+  transform: translateY(-5px);
+  border-color: var(--br2);
+}
+.project-card.hidden {
+  display: none;
+}
+.card-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--bg-sub);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+.card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity .3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+.project-card:hover .card-img-overlay { opacity: 1; }
+.card-overlay-cta {
+  font-family: var(--mono);
+  font-size: .68rem;
+  color: #fff;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.card-placeholder {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--bg-sub);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.cp-icon { color: var(--tx4); }
+.cp-filename {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx4);
+  letter-spacing: .05em;
+  text-align: center;
+  padding: 0 16px;
+  line-height: 1.4;
+}
+.card-body {
+  padding: 20px 22px 24px;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 11px;
+  flex-wrap: wrap;
+}
+.card-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--tx);
+  letter-spacing: -.02em;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.card-desc {
+  font-size: .82rem;
+  color: var(--tx3);
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.card-tag {
+  font-family: var(--mono);
+  font-size: .62rem;
+  color: var(--tx3);
+  background: var(--bg-sub);
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+.card-link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--br);
+}
+.card-link {
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--tx3);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  transition: color .15s;
+}
+.project-card:hover .card-link { color: var(--tx); }
+.card-arrow {
+  font-size: .85rem;
+  color: var(--tx4);
+  transition: transform .2s, color .15s;
+}
+.project-card:hover .card-arrow { color: var(--tx); transform: translateX(3px); }
+
+/* ── FEATURED BADGE ── */
+.featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: .58rem;
+  color: #2D6A2D;
+  background: #E8F5E8;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: .04em;
+}
+
+/* ── NO RESULTS ── */
+.no-results {
+  grid-column: span 2;
+  padding: 80px 0;
+  text-align: center;
+  display: none;
+}
+.no-results.visible { display: block; }
+.no-results p {
+  font-size: .9rem;
+  color: var(--tx3);
+}
+
+/* ── 3-COL OVERRIDE FOR DIGITAL/SMALL CARDS ── */
+.projects-grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .work-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .work-sub { max-width: 100%; }
+}
+@media (max-width: 768px) {
+  .work-hero { padding: 110px var(--pad) 48px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid.three-col { grid-template-columns: 1fr; }
+  .no-results { grid-column: span 1; }
+  .filter-section { top: 56px; padding: 16px var(--pad) 0; }
+}
+</style>
+</head>
+<body style="opacity:0;">
+
+<!-- MOBILE OVERLAY -->
+<div class="mob-overlay" id="mobOverlay">
+  <button class="mob-close" id="mobClose">✕</button>
+  <nav class="mob-nav">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="real-estate.html" onclick="closeMob()">Real Estate</a>
+    <a href="case-studies.html" onclick="closeMob()">Case Studies</a>
+    <a href="work.html" onclick="closeMob()">The Work</a>
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="mob-cta" onclick="closeMob()">Let's Talk ↗</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="index.html" class="logo">Aryan <span>Swaroop</span></a>
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+  </nav>
+  <div class="header-right">
+    <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="cta-btn">Let's Talk</a>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="work-hero">
+  <div class="container">
+    <div class="work-hero-inner">
+      <div>
+        <span class="sec-label reveal">Portfolio</span>
+        <h1 class="work-title reveal rd1">Selected<br><span class="grad-text">work.</span></h1>
+        <p class="work-sub reveal rd2">Ten projects across real estate branding, brand identity, packaging, and digital content. Six real estate, four across other categories.</p>
+      </div>
+      <div class="work-hero-right reveal rd2">
+        <div class="work-count-row">
+          <div class="work-count-item">
+            <span class="work-count-num">10</span>
+            <span class="work-count-label">Total projects</span>
+          </div>
+          <div class="work-count-divider"></div>
+          <div class="work-count-item">
+            <span class="work-count-num">6</span>
+            <span class="work-count-label">Real estate</span>
+          </div>
+          <div class="work-count-divider"></div>
+          <div class="work-count-item">
+            <span class="work-count-num">4</span>
+            <span class="work-count-label">Other categories</span>
+          </div>
+        </div>
+        <p style="font-size:.82rem;color:var(--tx3);line-height:1.65;border-left:2px solid var(--br2);padding-left:14px;margin-top:8px;">
+          Real estate is the primary focus — pre-launch developers across Hoskote, Devanahalli, and Sarjapur. The other projects show range across branding, packaging, and content production.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FILTER BAR
+══════════════════════════════════════ -->
+<div class="filter-section">
+  <div class="filter-inner">
+    <span class="filter-label">Filter</span>
+    <button class="filter-btn active" data-filter="all">All work</button>
+    <button class="filter-btn" data-filter="realestate">Real Estate</button>
+    <button class="filter-btn" data-filter="branding">Branding</button>
+    <button class="filter-btn" data-filter="packaging">Packaging</button>
+    <button class="filter-btn" data-filter="digital">Digital</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PROJECT GRID — 10 CARDS
+══════════════════════════════════════ -->
+<section class="projects-section">
+  <div class="container">
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- ── 01 PAAVANI PROPERTIES ── -->
+      <a href="case-studies.html#cs-paavani"
+         class="project-card reveal"
+         data-category="realestate">
+        <!-- Replace: images/paavani-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/paavani-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-re">Real Estate</span>
+            <span class="pill pill-sec">Hoskote</span>
+            <span class="featured-badge">Case Study</span>
+          </div>
+          <div class="card-name">Paavani Properties</div>
+          <div class="card-desc">Zero to complete system. Brand identity, print collateral, 3D visualization, and Meta campaigns that generated 302 leads at ₹82 per lead.</div>
+          <div class="card-tags">
+            <span class="card-tag">Brand Identity</span>
+            <span class="card-tag">Print</span>
+            <span class="card-tag">3D Renders</span>
+            <span class="card-tag">Meta Ads</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Read case study</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 02 ROYAL FARM ── -->
+      <a href="case-studies.html#cs-royalfarm"
+         class="project-card reveal rd1"
+         data-category="realestate">
+        <!-- Replace: images/royalfarm-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/royalfarm-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-farm">Real Estate</span>
+            <span class="pill pill-sec">Farmland</span>
+            <span class="featured-badge">Case Study</span>
+          </div>
+          <div class="card-name">Royal Farm</div>
+          <div class="card-desc">Displaced a large agency. Mascot-led brand for working professionals who want to grow food and live closer to nature. Sales confirmed.</div>
+          <div class="card-tags">
+            <span class="card-tag">Mascot</span>
+            <span class="card-tag">Brochure</span>
+            <span class="card-tag">Hoardings</span>
+            <span class="card-tag">Meta Ads</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Read case study</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 03 JP HOUSING ── -->
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20know%20more%20about%20your%20JP%20Housing%20work."
+         target="_blank" rel="noopener"
+         class="project-card reveal"
+         data-category="realestate">
+        <!-- Replace: images/jp-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/jp-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-re">Real Estate</span>
+            <span class="pill pill-sec">Apartments</span>
+          </div>
+          <div class="card-name">JP Housing Corporation</div>
+          <div class="card-desc">Multiple project brands under one client — JP Lavender, JP Exotic, and JP Hibiscus. Brand identity, print collateral, and Meta ad campaigns.</div>
+          <div class="card-tags">
+            <span class="card-tag">Brand Identity</span>
+            <span class="card-tag">Print</span>
+            <span class="card-tag">Social Media</span>
+            <span class="card-tag">Meta Ads</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Enquire about this work</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 04 SKYVIEW VILLAS ── -->
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20know%20more%20about%20your%20Skyview%20Villas%20work."
+         target="_blank" rel="noopener"
+         class="project-card reveal rd1"
+         data-category="realestate">
+        <!-- Replace: images/skyview-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/skyview-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-re">Real Estate</span>
+            <span class="pill pill-sec">Apartments</span>
+          </div>
+          <div class="card-name">Skyview Villas</div>
+          <div class="card-desc">Brand identity, print collateral, 3D renders, and Meta ad campaigns for a residential apartment project. Full pre-launch creative production.</div>
+          <div class="card-tags">
+            <span class="card-tag">Brand Identity</span>
+            <span class="card-tag">3D Renders</span>
+            <span class="card-tag">Print</span>
+            <span class="card-tag">Meta Ads</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Enquire about this work</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 05 DIZZEL ── -->
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20know%20more%20about%20your%20Dizzel%20work."
+         target="_blank" rel="noopener"
+         class="project-card reveal"
+         data-category="realestate">
+        <!-- Replace: images/dizzel-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/dizzel-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-re">Real Estate</span>
+          </div>
+          <div class="card-name">Dizzel</div>
+          <div class="card-desc">Brand identity, social media creatives, and Meta ad campaigns. Clean visual system built for digital-first buyer acquisition.</div>
+          <div class="card-tags">
+            <span class="card-tag">Brand Identity</span>
+            <span class="card-tag">Social Media</span>
+            <span class="card-tag">Meta Ads</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Enquire about this work</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 06 SIDVIN KBR PRIME ── -->
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20know%20more%20about%20your%20Sidvin%20KBR%20Prime%20work."
+         target="_blank" rel="noopener"
+         class="project-card reveal rd1"
+         data-category="realestate">
+        <!-- Replace: images/sidvin-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/sidvin-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-re">Real Estate</span>
+            <span class="pill pill-sec">Hoskote</span>
+          </div>
+          <div class="card-name">Sidvin KBR Prime</div>
+          <div class="card-desc">Brand identity, print collateral, 3D visualization, and Meta ad campaigns for a plot development in the Hoskote East Bengaluru corridor.</div>
+          <div class="card-tags">
+            <span class="card-tag">Brand Identity</span>
+            <span class="card-tag">Print</span>
+            <span class="card-tag">3D Renders</span>
+            <span class="card-tag">Meta Ads</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Enquire about this work</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 07 ISHA V SECURITY ── -->
+      <a href="case-studies.html#cs-ishav"
+         class="project-card reveal"
+         data-category="branding">
+        <!-- Replace: images/ishav-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/ishav-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-sec">Security</span>
+            <span class="featured-badge">Case Study</span>
+          </div>
+          <div class="card-name">Isha V Security</div>
+          <div class="card-desc">Brand built from a name, a faith, and a very specific idea of what protection means. 10 staff at launch — now 250+ staff, 60+ corporate clients.</div>
+          <div class="card-tags">
+            <span class="card-tag">Brand Identity</span>
+            <span class="card-tag">Uniform</span>
+            <span class="card-tag">Cards</span>
+            <span class="card-tag">Web</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Read case study</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 08 BRAHMI COFFEE ── -->
+      <a href="case-studies.html#cs-brahmi"
+         class="project-card reveal rd1"
+         data-category="packaging">
+        <!-- Replace: images/brahmi-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/brahmi-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-food">F&B</span>
+            <span class="pill pill-sec">South India</span>
+            <span class="featured-badge">Case Study</span>
+          </div>
+          <div class="card-name">Brahmi Coffee Roasters</div>
+          <div class="card-desc">Bring the village to the city. A South Indian festival morning turned into a complete brand system — mascot, packaging, and the Shastry sub-brand.</div>
+          <div class="card-tags">
+            <span class="card-tag">Brand Identity</span>
+            <span class="card-tag">Mascot</span>
+            <span class="card-tag">Packaging</span>
+            <span class="card-tag">Guidelines</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Read case study</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 09 MVJ COLLEGE ── -->
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20know%20more%20about%20your%20MVJ%20College%20work."
+         target="_blank" rel="noopener"
+         class="project-card reveal"
+         data-category="digital">
+        <!-- Replace: images/mvj-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/mvj-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-edu">Education</span>
+            <span class="pill pill-sec">Bengaluru</span>
+          </div>
+          <div class="card-name">MVJ College of Engineering</div>
+          <div class="card-desc">Building a consistent professional digital presence across Instagram, Facebook, and YouTube — faculty interviews, event coverage, and social media content.</div>
+          <div class="card-tags">
+            <span class="card-tag">Social Media</span>
+            <span class="card-tag">Events</span>
+            <span class="card-tag">Interviews</span>
+            <span class="card-tag">Content</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Enquire about this work</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- ── 10 ARVI HOSPITAL ── -->
+      <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20know%20more%20about%20your%20Arvi%20Hospital%20work."
+         target="_blank" rel="noopener"
+         class="project-card reveal rd1"
+         data-category="digital">
+        <!-- Replace: images/arvi-hero.jpg — 1200×750px -->
+        <div class="card-placeholder">
+          <svg class="cp-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="cp-filename">images/arvi-hero.jpg · 1200×750px</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="pill pill-health">Healthcare</span>
+            <span class="pill pill-sec">Bengaluru</span>
+          </div>
+          <div class="card-name">Arvi Hospital</div>
+          <div class="card-desc">Doctor interview series, event coverage, and ongoing social media content production for a healthcare brand building trust through consistent digital presence.</div>
+          <div class="card-tags">
+            <span class="card-tag">Video</span>
+            <span class="card-tag">Events</span>
+            <span class="card-tag">Social Media</span>
+            <span class="card-tag">Content</span>
+          </div>
+          <div class="card-link-row">
+            <span class="card-link">Enquire about this work</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- No results state -->
+      <div class="no-results" id="noResults">
+        <p>No projects in this category yet.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CTA BAND
+══════════════════════════════════════ -->
+<div class="cta-band reveal">
+  <h2>Like what you see?</h2>
+  <p class="lead">Tell me about your project and let's see if we're a fit.<br>I'll give you a straight answer — not a sales pitch.</p>
+  <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="btn-wa">
+    <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+    Tell me about your project
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-logo">Aryan <span>Swaroop</span></div>
+  <nav class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="real-estate.html">Real Estate</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="work.html">The Work</a>
+    <a href="https://www.instagram.com/arya.nswaroop/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/aryanswaroop/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/keerthanswarup1" target="_blank" rel="noopener">Behance</a>
+  </nav>
+  <p class="footer-copy">© 2026 Aryan Swaroop · Bengaluru, India</p>
+</footer>
+
+<!-- WA FAB -->
+<a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20found%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
+  <span class="wa-fab-label">Let's Talk</span>
+</a>
+
+<script src="shared.js"></script>
+<script>
+/* ── FILTER LOGIC ── */
+(function(){
+  var btns = document.querySelectorAll('.filter-btn[data-filter]');
+  var cards = document.querySelectorAll('.project-card[data-category]');
+  var noResults = document.getElementById('noResults');
+
+  function applyFilter(filter) {
+    var visible = 0;
+    cards.forEach(function(card) {
+      var match = filter === 'all' || card.dataset.category === filter;
+      if (match) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    if (noResults) {
+      noResults.classList.toggle('visible', visible === 0);
+    }
+  }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+})();
+</script>
+</body>
+</html>
