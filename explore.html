@@ -145,6 +145,86 @@
   color:var(--tx3);
   max-width:680px;
 }
+.resource-modal{
+  position:fixed;
+  inset:0;
+  z-index:250;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+.resource-modal.open{display:flex;}
+.resource-modal-backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(6,4,10,.7);
+  backdrop-filter:blur(10px);
+}
+.resource-modal-card{
+  position:relative;
+  width:min(520px,100%);
+  background:var(--bg-el);
+  background-image:var(--surface-tint);
+  border:1px solid var(--br);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:var(--sh-lg);
+}
+.resource-modal-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  border:1px solid var(--br);
+  background:var(--bg-sub);
+  color:var(--tx);
+}
+.resource-modal-form{
+  margin-top:22px;
+  display:grid;
+  gap:12px;
+}
+.resource-modal-form input{
+  width:100%;
+  border:1px solid var(--br);
+  border-radius:12px;
+  padding:14px 16px;
+  background:var(--bg-sub);
+  color:var(--tx);
+  font:inherit;
+}
+.resource-modal-form input:focus{
+  outline:none;
+  border-color:var(--br2);
+}
+.resource-status{
+  font-size:.82rem;
+  line-height:1.6;
+  color:var(--tx3);
+  min-height:24px;
+}
+.resource-status.success{color:#2f9e44;}
+body.theme-dark .resource-status.success{color:#9dffb5;}
+.resource-status.error{color:#d9485f;}
+.resource-meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.resource-meta span{
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--tx3);
+  background:var(--bg-sub);
+  padding:6px 10px;
+  border-radius:999px;
+}
 @media (max-width:1024px){
   .explore-hero-inner{grid-template-columns:1fr;gap:32px;}
 }
@@ -218,17 +298,17 @@
     <div class="explore-grid" style="margin-top:40px;">
       <article class="explore-card reveal" data-parallax data-parallax-speed="0.05">
         <div class="explore-card-top">
-          <span class="explore-card-kicker">Live Demo</span>
-          <div class="explore-card-title">Aryan Swaroop Portfolio</div>
-          <p class="explore-card-desc">A live version of the portfolio direction itself. Useful for comparing iterations, testing motion decisions, and evolving the site as a product rather than a static brochure.</p>
+          <span class="explore-card-kicker">City Tool</span>
+          <div class="explore-card-title">Where to go this weekend?</div>
+          <p class="explore-card-desc">A Bengaluru random picker that helps people spin for cafes, rooftops, hidden gems, food spots, and weekend plans. Built as a playful utility with filters, search, saved picks, and day-planning features.</p>
           <div class="explore-card-tags">
-            <span>Portfolio</span>
-            <span>UI System</span>
-            <span>Frontend</span>
+            <span>Utility</span>
+            <span>Web App</span>
+            <span>Bengaluru</span>
           </div>
         </div>
         <div class="explore-card-actions">
-          <a class="btn-primary" href="https://aryanswaroopportfolio.vercel.app/" target="_blank" rel="noopener">Open live site ↗</a>
+          <a class="btn-primary" href="https://aryanswaroopportfolio.vercel.app/" target="_blank" rel="noopener">Try the picker ↗</a>
         </div>
       </article>
 
@@ -257,6 +337,7 @@
       <span class="sec-label">Freebies</span>
       <h2 class="headline-accent" style="margin-top:6px;margin-bottom:14px;">Things you can <span class="grad-text">use.</span></h2>
       <p class="lead" style="max-width:620px;">Free templates, checklists, and planning tools designed to be genuinely useful for developers, founders, and businesses before they hire anyone.</p>
+      <p class="explore-note" style="margin-top:12px;">Visitors can request each resource with their email and get the link automatically instead of opening WhatsApp every time.</p>
     </div>
     <div class="explore-grid" style="margin-top:40px;">
       <article class="explore-card reveal">
@@ -271,7 +352,7 @@
           </div>
         </div>
         <div class="explore-card-actions">
-          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Project%20Brochure%20Checklist%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+          <button class="btn-secondary resource-trigger" type="button" data-resource-id="project-brochure-checklist" data-resource-title="Project Brochure Checklist">Email me this resource</button>
         </div>
       </article>
 
@@ -287,7 +368,7 @@
           </div>
         </div>
         <div class="explore-card-actions">
-          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Real%20Estate%20Ad%20Creative%20Audit%20Sheet%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+          <button class="btn-secondary resource-trigger" type="button" data-resource-id="real-estate-ad-creative-audit" data-resource-title="Real Estate Ad Creative Audit Sheet">Email me this resource</button>
         </div>
       </article>
 
@@ -303,7 +384,7 @@
           </div>
         </div>
         <div class="explore-card-actions">
-          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Founder%20Brand%20Brief%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+          <button class="btn-secondary resource-trigger" type="button" data-resource-id="founder-brand-brief" data-resource-title="Founder Brand Brief">Email me this resource</button>
         </div>
       </article>
 
@@ -319,7 +400,7 @@
           </div>
         </div>
         <div class="explore-card-actions">
-          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20Packaging%20Design%20Brief%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+          <button class="btn-secondary resource-trigger" type="button" data-resource-id="packaging-design-brief" data-resource-title="Packaging Design Brief">Email me this resource</button>
         </div>
       </article>
 
@@ -335,7 +416,7 @@
           </div>
         </div>
         <div class="explore-card-actions">
-          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%20WhatsApp%20Lead%20Follow-Up%20Flow%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+          <button class="btn-secondary resource-trigger" type="button" data-resource-id="whatsapp-lead-follow-up-flow" data-resource-title="WhatsApp Lead Follow-Up Flow">Email me this resource</button>
         </div>
       </article>
 
@@ -351,11 +432,11 @@
           </div>
         </div>
         <div class="explore-card-actions">
-          <a class="btn-secondary" href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20the%2030-Day%20Content%20Planner%20freebie." target="_blank" rel="noopener">Request freebie ↗</a>
+          <button class="btn-secondary resource-trigger" type="button" data-resource-id="30-day-content-planner" data-resource-title="30-Day Content Planner">Email me this resource</button>
         </div>
       </article>
     </div>
-    <p class="explore-note reveal">These can later become real downloadable PDFs or Notion templates. For now, the section gives people a useful reason to discover your work and start a conversation.</p>
+    <p class="explore-note reveal">Each request can be delivered instantly by email now, and you can later swap the linked resource pages for PDFs, Notion docs, or downloadable templates without changing the front-end flow.</p>
   </div>
 </section>
 
@@ -388,6 +469,97 @@
   <span class="wa-fab-label">Let's Talk</span>
 </a>
 
+<div class="resource-modal" id="resourceModal" aria-hidden="true">
+  <div class="resource-modal-backdrop" id="resourceModalBackdrop"></div>
+  <div class="resource-modal-card">
+    <button class="resource-modal-close" id="resourceModalClose" type="button" aria-label="Close form">✕</button>
+    <span class="sec-label" style="margin-bottom:8px;">Instant Resource Delivery</span>
+    <h3 id="resourceModalTitle" style="margin-bottom:10px;">Get this resource by email</h3>
+    <p style="font-size:.9rem;color:var(--tx2);line-height:1.7;">Enter your email and the resource link will be sent automatically. You can later swap the linked page for a PDF or tool download without changing this flow.</p>
+    <div class="resource-meta">
+      <span>No WhatsApp required</span>
+      <span>Delivered automatically</span>
+      <span>Works with Vercel + email API</span>
+    </div>
+    <form class="resource-modal-form" id="resourceForm">
+      <input type="text" id="resourceName" name="name" placeholder="Your name (optional)">
+      <input type="email" id="resourceEmail" name="email" placeholder="Your email address" required>
+      <input type="hidden" id="resourceId" name="resourceId">
+      <button class="btn-primary" type="submit">Send it to my inbox</button>
+      <div class="resource-status" id="resourceStatus"></div>
+    </form>
+  </div>
+</div>
+
 <script src="shared.js"></script>
+<script>
+(function(){
+  var modal=document.getElementById('resourceModal');
+  var modalTitle=document.getElementById('resourceModalTitle');
+  var backdrop=document.getElementById('resourceModalBackdrop');
+  var closeBtn=document.getElementById('resourceModalClose');
+  var form=document.getElementById('resourceForm');
+  var resourceId=document.getElementById('resourceId');
+  var resourceEmail=document.getElementById('resourceEmail');
+  var status=document.getElementById('resourceStatus');
+
+  function openModal(id,title){
+    resourceId.value=id;
+    modalTitle.textContent='Get "'+title+'" by email';
+    status.textContent='';
+    status.className='resource-status';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('no-scroll');
+    setTimeout(function(){resourceEmail.focus();},30);
+  }
+
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('no-scroll');
+    form.reset();
+    status.textContent='';
+    status.className='resource-status';
+  }
+
+  document.querySelectorAll('.resource-trigger').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      openModal(btn.dataset.resourceId,btn.dataset.resourceTitle);
+    });
+  });
+
+  backdrop.addEventListener('click',closeModal);
+  closeBtn.addEventListener('click',closeModal);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&modal.classList.contains('open')) closeModal();
+  });
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    status.textContent='Sending your resource...';
+    status.className='resource-status';
+    try{
+      var res=await fetch('/api/send-resource',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+          name:document.getElementById('resourceName').value.trim(),
+          email:resourceEmail.value.trim(),
+          resourceId:resourceId.value
+        })
+      });
+      var data=await res.json();
+      if(!res.ok) throw new Error(data.error||'Could not send the resource right now.');
+      status.textContent='Done. Check your inbox for the resource link.';
+      status.className='resource-status success';
+      setTimeout(closeModal,1800);
+    }catch(err){
+      status.textContent=err.message||'Something went wrong. Please try again.';
+      status.className='resource-status error';
+    }
+  });
+})();
+</script>
 </body>
 </html>
