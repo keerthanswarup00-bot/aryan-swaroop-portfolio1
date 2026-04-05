@@ -1,4 +1,40 @@
 (function(){
+  /* ── THEME ── */
+  var themeKey='aryan-theme';
+  function getStoredTheme(){
+    try{return localStorage.getItem(themeKey);}catch(err){return null;}
+  }
+  function setStoredTheme(theme){
+    try{localStorage.setItem(themeKey,theme);}catch(err){}
+  }
+  function getPreferredTheme(){
+    var stored=getStoredTheme();
+    if(stored==='light'||stored==='dark') return stored;
+    return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function applyTheme(theme){
+    document.body.classList.toggle('theme-dark',theme==='dark');
+    document.documentElement.setAttribute('data-theme',theme);
+    document.querySelectorAll('.theme-toggle').forEach(function(btn){
+      var dark=theme==='dark';
+      btn.setAttribute('aria-pressed',dark?'true':'false');
+      btn.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
+      btn.innerHTML=dark
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"></path></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" aria-hidden="true"><path d="M20 15.2A7.9 7.9 0 0 1 8.8 4 8.8 8.8 0 1 0 20 15.2z"></path></svg>';
+    });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    applyTheme(getPreferredTheme());
+    document.querySelectorAll('.theme-toggle').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var next=document.body.classList.contains('theme-dark')?'light':'dark';
+        setStoredTheme(next);
+        applyTheme(next);
+      });
+    });
+  });
+
   /* ── PAGE FADE TRANSITION ── */
   document.addEventListener('DOMContentLoaded',function(){
     // Fade in on load

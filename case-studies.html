@@ -355,7 +355,7 @@
 
 <!-- MOBILE OVERLAY -->
 <div class="mob-overlay" id="mobOverlay">
-  <button class="mob-close" id="mobClose">✕</button>
+  <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
   <nav class="mob-nav">
     <a href="index.html" onclick="closeMob()">Home</a>
     <a href="real-estate.html" onclick="closeMob()">Real Estate</a>
@@ -375,8 +375,9 @@
     <a href="work.html">The Work</a>
   </nav>
   <div class="header-right">
+    <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false"></button>
     <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="cta-btn">Let's Talk</a>
-    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -386,7 +387,7 @@
 <div class="cs-page-hero">
   <div class="container">
     <span class="sec-label reveal">Case Studies</span>
-    <h1 class="cs-page-title reveal rd1">The work,<br><em style="font-style:italic;color:var(--tx3);">in depth.</em></h1>
+    <h1 class="cs-page-title headline-glow reveal rd1">The work,<br><span class="grad-text">in depth.</span></h1>
     <p class="cs-page-sub reveal rd2">Four brands transformed. Real problems, real thinking, real results — from real estate to coffee to security.</p>
 
     <div class="cs-index reveal rd3">
@@ -431,7 +432,7 @@
         <span class="pill pill-sec">Hoskote</span>
       </span>
     </div>
-    <h2 class="cs-title">Paavani Properties</h2>
+    <h2 class="cs-title headline-accent"><span class="grad-text">Paavani</span> Properties</h2>
     <p class="cs-tagline">Zero brand presence to complete system — in a market flooded with competitors. 302 leads in 66 days at ₹82 per lead. 4.3% lead-to-site-visit rate tracked call by call by the sales team.</p>
     <div class="cs-meta">
       <div class="cs-meta-item">
@@ -590,7 +591,7 @@
         <span class="pill pill-sec">Farmland</span>
       </span>
     </div>
-    <h2 class="cs-title">Royal Farm</h2>
+    <h2 class="cs-title headline-accent">Royal <span class="grad-text">Farm</span></h2>
     <p class="cs-tagline">A developer had already paid a large agency for a brand. It didn't work — not because it was badly made, but because it was built for the wrong buyer. Here's what changed.</p>
     <div class="cs-meta">
       <div class="cs-meta-item">
@@ -750,7 +751,7 @@
         <span class="pill pill-sec">Security</span>
       </span>
     </div>
-    <h2 class="cs-title">Isha V Security</h2>
+    <h2 class="cs-title headline-accent">Isha V <span class="grad-text">Security</span></h2>
     <p class="cs-tagline">A brand built from a name, a faith, and a very specific idea of what protection means. Started with 10 people. Now 250+ staff serving 60+ corporate offices and residential apartments across Bengaluru.</p>
     <div class="cs-meta">
       <div class="cs-meta-item">
@@ -887,7 +888,7 @@
         <span class="pill pill-food">F&B</span>
       </span>
     </div>
-    <h2 class="cs-title">Brahmi Coffee<br>Roasters</h2>
+    <h2 class="cs-title headline-accent">Brahmi Coffee<br><span class="grad-text">Roasters</span></h2>
     <p class="cs-tagline">A founder with too many ideas, a crowded market, and one genuine cultural insight that changed everything. Bring the village to the city. The hills, the festival morning, the aroma of filter coffee filling the house.</p>
     <div class="cs-meta">
       <div class="cs-meta-item">
@@ -1040,7 +1041,7 @@
 
 <!-- CTA BAND -->
 <div class="cta-band reveal">
-  <h2>Worked on a project like<br>one of these?</h2>
+  <h2 class="headline-glow">Worked on a project like<br><span class="grad-text">one of these?</span></h2>
   <p class="lead">Tell me about your development and I'll show you<br>how this approach applies to your specific market.</p>
   <a href="https://wa.me/916364224230?text=Hi%20Aryan%2C%20I%20saw%20your%20case%20studies%20and%20I%27d%20like%20to%20discuss%20my%20project." target="_blank" rel="noopener" class="btn-wa">
     <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.405A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.96 7.96 0 01-4.076-1.125l-.292-.174-3.035.857.844-3.083-.19-.3A7.96 7.96 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/></svg>
@@ -1058,7 +1059,7 @@
     <a href="work.html">The Work</a>
     <a href="https://www.instagram.com/arya.nswaroop/" target="_blank" rel="noopener">Instagram</a>
     <a href="https://www.linkedin.com/in/aryanswaroop/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://www.behance.net/keerthanswarup1" target="_blank" rel="noopener">Behance</a>
+    <a href="https://www.behance.net/Aryan-swaroop" target="_blank" rel="noopener">Behance</a>
   </nav>
   <p class="footer-copy">© 2026 Aryan Swaroop · Bengaluru, India</p>
 </footer>
